@@ -13,6 +13,7 @@ const app = express()
 // Configs
 require('./configs/preformatter.config')(app)
 require('./configs/middleware.config')(app)
+require('./configs/passport.config')(app)
 require('./configs/views.configs')(app)
 require('./configs/locals.config')(app)
 

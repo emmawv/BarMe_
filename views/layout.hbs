@@ -16,7 +16,46 @@
 </head>
 
 <body>
+<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+  <a class='navbar-brand' href='/'>Passport App</a>
+  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent'
+    aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+    <span class='navbar-toggler-icon'></span>
+  </button>
+  <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+    <ul class='navbar-nav ml-auto'>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Zonas privadas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/profile">Perfil (guests)</a>
+          <a class="dropdown-item" href="/editar-contentidos">Crear contenido (editors)</a>
+          <a class="dropdown-item" href="/admin-zone">Panel de Asministración (admins)</a>
+        </div>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='/'>Inicio</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='/signup'>Registro</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='/signup/owner'>Registro dueño</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='/profile'>Profile</a>
+      </li>
+      <li class='nav-item'>
 
+        <a class='nav-link' href='/cerrar-sesion'>Cerrar sesión</a>
+      </li>
+
+
+    </ul>
+  </div>
+</nav>
   {{{body}}}
   <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

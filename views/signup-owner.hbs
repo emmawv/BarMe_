@@ -1,0 +1,23 @@
+<div class="container">
+    <form action="/signup/owner" method='POST'>
+
+        <input type="text" placeholder="Name" name="username">
+        <br>
+        <br>
+        <input type="text" placeholder="email" name="email">
+        <br>
+        <br>
+        <input type="text" placeholder="Telephone" name="telephone">
+        <br>
+        <br>
+        <input type="password" placeholder="Password" name="password">
+        <br>
+        <br>
+        <button type="submit">Sign Up</button>
+        <br>
+        <a href="/singup/owner">Are you an owner?</a>
+        {{#if errorMsg}}
+        <div>
+            {{errorMsg}}
+        </div>
+        {{/if}}
