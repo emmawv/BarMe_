@@ -14,7 +14,7 @@ const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(re
 router.get('/profile', ensureAuthenticated, (req, res) => {
     if (req.user.role === 'GUEST') {
         console.log('You are a guest')
-        // res.render('profile/user', { user: req.user })
+        res.render('profile/user', { user: req.user })
     } else if (req.user.role === 'BOSS') {
         Bar.find({ owner: req.user.id })
             .then(bars => res.render('profile/owner', { user: req.user, bars: bars }))

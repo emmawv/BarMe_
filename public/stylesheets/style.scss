@@ -1,6 +1,9 @@
 body {
   font-family: 'Montserrat', sans-serif;
 }
+.center{
+  text-align: center;
+}
 
 .main-page {
   background: url("https://res.cloudinary.com/djqsmqs26/image/upload/v1606045413/Project-2/patrick-tomasso-GXXYkSwndP4-unsplash_gxlg5o.jpg") no-repeat center/cover;
@@ -9,44 +12,156 @@ body {
   z-index: -10
 }
 
-.filter{
+.filter-login{
   height: 100vh;
   background-color: rgba(89,49,40, 0.5);
   z-index: 10;
 
 }
+.filter {
+  height: 100vh;
+  background-color: rgba(89, 49, 40, 0.5);
+  z-index: 10;
 
-.filter h1{
-  color: white;
-  z-index: 20;
-  padding-top: 15rem
 }
 
 
+.filter> div{
+
+  z-index: 20;
+  padding-top: 15rem;
+   color: white;
+
+}
+
+
+.filter a{
+  font-size: 1.5em;
+}
 .navbar{
   position: sticky;
   top: 0;
   left: 0;
+    z-index: 10;
 }
 
 #barsMap{
   height: 500px;
-  margin: 0px 10px 10px 0;
+  margin: 0px 10px 10px 15px;
   z-index: -1;
-  margin-top: 20px;
-}
 
+
+}
+.wrapper{
+  padding:40px
+}
 #barMap{
   height: 500px;
-  margin: 0px 10px 10px 0;
-  z-index: -1;
-  margin-top: 20px;
-}
+ margin: 0px 10px 10px 15px;
+ z-index: -1;
+ margin-left: 20px;
 
+}
+.image-square{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom:20px
+}
+.map{
+  margin-left:30px
+}
 .details img {
-  width: 400px
+  width: 400px;
+    z-index: -1;
+}
+.container{
+  padding-top: 30px;
+
+}
+.barlist{
+  margin-right: 20px;
+}
+.bar-list img{
+  height: 180px;
+  width: 255px;
+  object-fit: cover;
+}
+.bar-list h4{
+  background-color: rgba(89, 49, 40, 1);
+  color:white;
+  text-align:center;
+ width: 255px;
 }
 
+.bar-detail h5{
+  padding-top: 20px
+}
+.bar-detail img{
+  height: 250px;
+  object-fit: cover;
+}
+.user-profile{
+  text-align: center;
+}
+.login{
+  text-align: left;
+  padding-top: 40px
+}
+.login .btn{
+color:#0d2426;
+background-color:#d8ccbc;
+  width: 70%;
+    max-width: 600px;
+
+}
+.beige{
+  color:#d8ccbc;
+  padding-top:30px
+}
+.login input{
+  width:70%;
+  max-width: 600px;
+}
+.login-backg{
+  background-image: url('https://res.cloudinary.com/djqsmqs26/image/upload/v1606068394/Project-2/radovan-46Yad80Ynp4-unsplash_sgk4dz.jpg ');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position:center ; 
+  background-size:cover;
+  color:white
+  
+}
+.backg-signup{
+  background-image: url('https://res.cloudinary.com/djqsmqs26/image/upload/v1606069664/Project-2/adam-jaime-dmkmrNptMpw-unsplash_kyuc9b.jpg ');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size:cover;
+  color:white
+}
+.signup{
+  text-align: right;
+  padding-top:100px
+
+}
+.signup input {
+  width: 70%;
+  max-width: 500px;
+}
+.signup button{
+    width: 70%;
+    max-width: 500px;
+color:#0d2426;
+background-color:#d8ccbc;
+}
+.signup a{
+  margin-top:20px;
+  color:white
+}
+.titlesign{
+  padding-top:60px
+}
 // /* Color Theme Swatches in Hex */
 // $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-1-hex: #F2E399;
 // $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-2-hex: #D99923;

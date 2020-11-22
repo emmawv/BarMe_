@@ -36,7 +36,7 @@ const bars = [
     {
         name: "Casino",
         description: "Bar guapisimo",
-        image:   "",
+        image:   "https://res.cloudinary.com/djqsmqs26/image/upload/v1606062108/Project-2/french-bar-58c2365f5f9b58af5ce3fe9c_yjdmlq.jpg ",
         location:   {
         type: 'Point',
             coordinates: [37.404024176522974, -1.5806011025189242]
@@ -55,7 +55,7 @@ const bars = [
     {
         name: "Traveller",
         description: "El mejor bar del 2d",
-        image:   "",
+        image:   " https://res.cloudinary.com/djqsmqs26/image/upload/v1606062118/Project-2/29063223_821844301324066_7645613196588184819_n_khrazv.jpg ",
         location:   {
         type: 'Point',
             coordinates: [40.42762542924357, -3.70322701953486]
@@ -74,7 +74,7 @@ const bars = [
     {
         name: "Bar Pepe",
         description: "pepepepeppepepe",
-        image: "",
+        image: "https://res.cloudinary.com/djqsmqs26/image/upload/v1606062110/Project-2/l_amlzlr.jpg ",
         location:   {
         type: 'Point',
             coordinates: [40.426589210930906, -3.7038479117741394]

@@ -1,19 +1,21 @@
 <div class="container details">
     <div class="row">
-        <div class="col-lg-5 col-12">
+        <div class="col-lg-5 col-md-12 bar-detail">
         {{#with bar}}
             <h2>{{name}}</h2>
             <hr>
             <img src="{{image}}">
+            <h5>Description</h5>
             <p>{{description}}</p>
             <section>
+                    <h5>Comments</h5>
                 {{#each comments}}
 
                 {{/each}}
             </section>
         {{/with}}
         </div>
-        <div class="col-lg-7 col-12">
+        <div class="col-lg-7 col-md-12">
             <div id="barMap"></div>
         </div>
     </div>

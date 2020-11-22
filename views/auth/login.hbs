@@ -1,13 +1,21 @@
-<div class="container">
-    <form action="/login" method='POST'>
 
+
+<div class="login-backg"> <div class="filter-login">
+<div class="container">
+<h1 class= "center beige">Log In</h1>
+
+    <form action="/login" method='POST' class="login">
+<br>
+<h5>Username</h5>
         <input type="text" placeholder="Name" name="username">
         <br>
         <br>
+        <h5>Password</h5>
         <input type="password" placeholder="Password" name="password">
         <br>
         <br>
-        <button type="submit">Log In</button>
+
+        <button type="submit" class="btn">Log In</button>
         <br>
         {{#if errorMsg}}
         <div>
@@ -16,4 +24,6 @@
         {{/if}}
 
     </form>
+</div>
+</div>
 </div>
