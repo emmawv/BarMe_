@@ -1,5 +1,25 @@
 body {
-  padding: 50px;
-  font-family: sans-serif; }
+  font-family: 'Montserrat', sans-serif; }
+
+.main-page {
+  background: url("../images/patrick-tomasso-GXXYkSwndP4-unsplash.jpg") no-repeat center/cover;
+  height: 100vh;
+  text-align: center;
+  z-index: -10; }
+
+.filter {
+  height: 100vh;
+  background-color: rgba(89, 49, 40, 0.5);
+  z-index: 10; }
+
+.filter h1 {
+  color: white;
+  z-index: 20;
+  padding-top: 15rem; }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0; }
 
 /*# sourceMappingURL=style.css.map */

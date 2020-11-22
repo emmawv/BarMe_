@@ -6,8 +6,7 @@ const userSchema = new Schema({
     password: String,
     role: {
         type:String,
-        enum: ["GUEST", "BOSS", "ADMIN"],
-        
+        enum: ["GUEST", "BOSS", "ADMIN"],  
     },
     email: String,
     profileImg: String,
@@ -17,4 +16,5 @@ const userSchema = new Schema({
     telephone:Number
 
 }, { timestamps: true })
-module.exports=mongoose.model('Users', userSchema)
+
+module.exports=mongoose.model('User', userSchema)

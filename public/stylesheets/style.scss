@@ -1,4 +1,51 @@
 body {
-  padding: 50px;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
+
+.main-page {
+  background: url("../images/patrick-tomasso-GXXYkSwndP4-unsplash.jpg") no-repeat center/cover;
+  height: 100vh;
+  text-align: center;
+  z-index: -10
+}
+
+.filter{
+  height: 100vh;
+  background-color: rgba(89,49,40, 0.5);
+  z-index: 10;
+
+}
+
+.filter h1{
+  color: white;
+  z-index: 20;
+  padding-top: 15rem
+}
+
+
+.navbar{
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+// /* Color Theme Swatches in Hex */
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-1-hex: #F2E399;
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-2-hex: #D99923;
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-3-hex: #D9601A;
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-4-hex: #593128;
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-5-hex: #F24738;
+
+// /* Color Theme Swatches in RGBA */
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-1-rgba: rgba(242,227,152, 1);
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-2-rgba: rgba(216,153,34, 1);
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-3-rgba: rgba(216,95,26, 1);
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-4-rgba: rgba(89,49,40, 1);
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-5-rgba: rgba(242,71,55, 1);
+
+// /* Color Theme Swatches in HSLA */
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-1-hsla: hsla(50, 77, 77, 1);
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-2-hsla: hsla(39, 72, 49, 1);
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-3-hsla: hsla(22, 78, 47, 1);
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-4-hsla: hsla(11, 37, 25, 1);
+// $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-5-hsla: hsla(5, 87, 58, 1);

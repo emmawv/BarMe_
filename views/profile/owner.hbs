@@ -1,0 +1,11 @@
+{{#with user}}
+<p>Welcome {{username}}</p>
+<a href="/new-bar" class="btn btn-dark" style="background-color:  #593128;">Create a new bar</a>
+
+{{/with}}
+<hr>
+{{#each bars}}
+<img src="{{image}}"
+<h3>{{name}}</h3>
+<p>{{description}}</p>
+{{/each}}
