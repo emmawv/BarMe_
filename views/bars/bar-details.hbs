@@ -1,0 +1,25 @@
+<div class="container details">
+    <div class="row">
+        <div class="col-lg-5 col-12">
+        {{#with bar}}
+            <h2>{{name}}</h2>
+            <hr>
+            <img src="{{image}}">
+            <p>{{description}}</p>
+            <section>
+                {{#each comments}}
+
+                {{/each}}
+            </section>
+        {{/with}}
+        </div>
+        <div class="col-lg-7 col-12">
+            <div id="barMap"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/bar-map.js"></script>
+<script src="{{{myKey}}}"></script>

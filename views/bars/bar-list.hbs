@@ -1,5 +1,26 @@
+
 <div class="container">
-    {{#each bars}}
-    <p>{{name}}<a href='bars/{{id}}'>[More info]</a></p>
-    {{/each}}
+    <div class="row justify-content-space-between">
+    
+        <div class="col-md-5 col-12">
+                    <h3>Bars</h3>
+                    <hr>
+                        {{#each bars}}
+                        <p>{{name}}<a href='bars/{{id}}'>[More info]</a></p>
+                        {{/each}}
+                    
+        </div>
+
+        <div class="col-md-7 col-12">
+            <div id="barsMap"></div>
+        </div>
+
+    </div>
+
 </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/javascripts/bars-map.js"></script>
+<script src="{{{myKey}}}"></script>

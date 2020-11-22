@@ -20,8 +20,8 @@ const bars = [
         image:   "https://www.slowmex.com/wp-content/uploads/slowmex-home-03.jpg",
         location:   {
         type: 'Point',
-            coordinates: [66546546, 487768]
-    },
+            coordinates: [40.42582395092801, -3.704541805551515]
+        },
         comments: [],
         owner: {
             username: "antonio",
@@ -33,14 +33,14 @@ const bars = [
         }
 
     },
-     {
+    {
         name: "Casino",
         description: "Bar guapisimo",
         image:   "",
         location:   {
         type: 'Point',
-            coordinates: [57557657, 487768]
-    },
+            coordinates: [37.404024176522974, -1.5806011025189242]
+        },
         comments: [],
         owner: {
             username: "ali",
@@ -52,14 +52,14 @@ const bars = [
         }
 
     },
-      {
+    {
         name: "Traveller",
         description: "El mejor bar del 2d",
         image:   "",
         location:   {
         type: 'Point',
-            coordinates: [66546546, 487768]
-    },
+            coordinates: [40.42762542924357, -3.70322701953486]
+        },
         comments: [],
         owner: {
             username: "emm",
@@ -70,14 +70,15 @@ const bars = [
 
         }
 
-},  {
-        name: "Bar de pepe",
+    },
+    {
+        name: "Bar Pepe",
         description: "pepepepeppepepe",
         image: "",
         location:   {
         type: 'Point',
-            coordinates: [66546546, 487768]
-    },
+            coordinates: [40.426589210930906, -3.7038479117741394]
+        },
         comments: [],
         owner: {
             username: "pepe",
@@ -88,10 +89,7 @@ const bars = [
 
         }
 
-      }
-        
-
-
+    }
 
 ]
 

@@ -3,7 +3,7 @@ body {
 }
 
 .main-page {
-  background: url("../images/patrick-tomasso-GXXYkSwndP4-unsplash.jpg") no-repeat center/cover;
+  background: url("https://res.cloudinary.com/djqsmqs26/image/upload/v1606045413/Project-2/patrick-tomasso-GXXYkSwndP4-unsplash_gxlg5o.jpg") no-repeat center/cover;
   height: 100vh;
   text-align: center;
   z-index: -10
@@ -27,6 +27,24 @@ body {
   position: sticky;
   top: 0;
   left: 0;
+}
+
+#barsMap{
+  height: 500px;
+  margin: 0px 10px 10px 0;
+  z-index: -1;
+  margin-top: 20px;
+}
+
+#barMap{
+  height: 500px;
+  margin: 0px 10px 10px 0;
+  z-index: -1;
+  margin-top: 20px;
+}
+
+.details img {
+  width: 400px
 }
 
 // /* Color Theme Swatches in Hex */
