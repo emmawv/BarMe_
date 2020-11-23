@@ -1,5 +1,5 @@
-const cloudinary = require('cloudinary').v2
-const { CloudinaryStorage } = require('multer-storage-cloudinary')
+const cloudinary = require('cloudinary')
+const cloudinaryStorage = require('multer-storage-cloudinary')
 const multer = require('multer')
 
 cloudinary.config({
@@ -8,11 +8,20 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_SECRET
 })
 
-const storage = new CloudinaryStorage({
+// const storage = new CloudinaryStorage({
+//     cloudinary: cloudinary,
+//     params: {
+//         folder: 'Project-2',
+//         format: async (req, file) => 'jpg'
+//     }
+// })
+
+const storage = cloudinaryStorage({
     cloudinary: cloudinary,
-    params: {
-        folder: 'fotos-webuild',
-        format: async (req, file) => 'jpg'
+    folder: 'Project-2',
+    allowedFormats: ['jpg', 'png'],
+    filename: function (req, file, cb) {
+        cb(null, file.originalname); // The file on cloudinary would have the same name as the original file name
     }
 })
 

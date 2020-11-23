@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const passport = require("passport")
+//const multer = require("multer")
+const uploadCloud = require("../configs/cdn-upload.config")
 
 const User = require("../models/user.model")
 const Bar = require("../models/bar.model")
@@ -54,8 +56,10 @@ router.get('/', (req, res) => res.render('index'))
 
 router.get('/new-bar', ensureAuthenticated, checkRole(['BOSS']), (req, res) => res.render('bars/new-bar', { user: req.user }))
 
-router.post('/new-bar', (req, res) => {
-    const { name, description, image, latitude, longitude } = req.body
+router.post('/new-bar', uploadCloud.single("image"), (req, res) => {
+    const image = req.file
+    const { name, description, latitude, longitude } = req.body
+    console.log(req.file)
 
     const location = {
         type: 'Point',
