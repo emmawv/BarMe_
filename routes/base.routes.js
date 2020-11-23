@@ -57,9 +57,9 @@ router.get('/', (req, res) => res.render('index'))
 router.get('/new-bar', ensureAuthenticated, checkRole(['BOSS']), (req, res) => res.render('bars/new-bar', { user: req.user }))
 
 router.post('/new-bar', uploadCloud.single("image"), (req, res) => {
-    const image = req.file
+    const image = req.file.path
     const { name, description, latitude, longitude } = req.body
-    console.log(req.file)
+    console.log(req.file.path)
 
     const location = {
         type: 'Point',
