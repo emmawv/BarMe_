@@ -42,22 +42,20 @@ body {
   position: sticky;
   top: 0;
   left: 0;
-    z-index: 10;
+  z-index: 10;
 }
 
 #barsMap{
-  height: 500px;
-  margin: 0px 10px 10px 15px;
-  z-index: -1;
+  height: 100vh;
+  z-index: 1;
 }
 .wrapper{
-  padding:40px
+  padding:40px;
 }
+
 #barMap{
   height: 500px;
-  margin: 0px 10px 10px 15px;
-  z-index: -1;
-  margin-left: 20px;
+  z-index: 10;
 
 }
 .image-square{
@@ -68,17 +66,17 @@ body {
   border: 1px solid white;
   border-radius: 5px;
 }
-.map{
-  margin-left:30px
+.row{
+  margin:0
 }
 .details img {
   width: 400px;
   z-index: -1;
 }
-.container{
-  padding-top: 30px;
+// .container{
+//   padding-top: 30px;
 
-}
+// }
 .barlist{
   margin-right: 20px;
 }
@@ -103,6 +101,12 @@ body {
 .bar-detail img{
   height: 250px;
   object-fit: cover;
+}
+.bar-detail .heart{
+  height:30px;
+  width: 30px;
+  background-color: pink;
+   fill: black;
 }
 .user-profile{
   text-align: center;
@@ -158,6 +162,7 @@ background-color:#d8ccbc;
 color:#0d2426;
 background-color:#d8ccbc;
 }
+
 .signup a{
   margin-top:20px;
   color:white
@@ -168,6 +173,33 @@ background-color:#d8ccbc;
 .back{
   float: right
 }
+.none{
+  display:none
+}
+@media (max-width: 992px) {
+  #barsMap {
+display:none}
+.bar-detail{
+  text-align: center;
+}
+}
+@media (max-width: 502px) {
+
+
+  .bar-detail img {
+    width: 300px;
+  }
+}
+
+@media(min-width:992px){
+  
+  #barsMap{
+    position:fixed;
+  left:0%;
+  top:0;
+  }
+  }
+//   
 // /* Color Theme Swatches in Hex */
 // $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-1-hex: #F2E399;
 // $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-2-hex: #D99923;

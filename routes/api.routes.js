@@ -12,5 +12,4 @@ router.get('/bars', (req, res) => {
         .catch(err => next(err))
 })
 
-
 module.exports = router

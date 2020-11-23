@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
         .catch(err => console.log(err))
 })
 
-router.get('/:id', (req, res) => {
+router.get('bars/:id', (req, res) => {
     
     const barId = req.params.id
     Bar.findById(barId)
@@ -23,4 +23,7 @@ router.get('/:id', (req, res) => {
         .catch(err => console.log(err))
 })
 
+router.get('/addcom/:id', (req, res) => {
+    console.log('holaa')
+})
 module.exports = router

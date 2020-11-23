@@ -8,7 +8,9 @@ const User = require("../models/user.model")
 const Bar = require("../models/bar.model")
 
 const bcrypt = require("bcrypt");
+const e = require('express')
 const bcryptSalt = 10
+const myKey = process.env.APIKEY
 
 const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next() : res.render('auth/login', { errorMsg: 'Desautorizado, inicia sesión' })
 const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Desautorizado, no tienes permisos' })
@@ -22,6 +24,8 @@ router.get('/profile', ensureAuthenticated, (req, res) => {
             .catch(err => console.log(err))
     }
 })
+
+
 
 router.get('/edit-bar', ensureAuthenticated, checkRole('BOSS'), (req, res) => { 
     const barId = req.query.id 
@@ -93,6 +97,13 @@ router.get('/delete-bar', (req, res) => {
         .catch(err => console.log(err))  
 })
 
+router.get('/bars/:id', (req, res) => {
+    const user=req.user
+    const barId = req.params.id
+    Bar.findById(barId)
+        .then(bar => res.render('bars/bar-details', { bar, myKey, user}))
+        .catch(err => console.log(err))
+})
 module.exports = router
 
 
