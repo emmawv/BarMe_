@@ -9,7 +9,13 @@ const barSchema = new Schema({
       ref:'Users'
     },
     image: String,
-    comments: [String],
+  comments: [{
+    name: {
+      type: Schema.Types.ObjectId,
+      ref: 'Users'
+    },
+    comment: String
+    }],
     location: {
       type: {
         type: String

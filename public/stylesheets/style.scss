@@ -49,31 +49,31 @@ body {
   height: 500px;
   margin: 0px 10px 10px 15px;
   z-index: -1;
-
-
 }
 .wrapper{
   padding:40px
 }
 #barMap{
   height: 500px;
- margin: 0px 10px 10px 15px;
- z-index: -1;
- margin-left: 20px;
+  margin: 0px 10px 10px 15px;
+  z-index: -1;
+  margin-left: 20px;
 
 }
 .image-square{
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-bottom:20px
+  margin-bottom:20px;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 .map{
   margin-left:30px
 }
 .details img {
   width: 400px;
-    z-index: -1;
+  z-index: -1;
 }
 .container{
   padding-top: 30px;
@@ -83,15 +83,18 @@ body {
   margin-right: 20px;
 }
 .bar-list img{
-  height: 180px;
-  width: 255px;
+  height: 150px;
+  width: 150px;
   object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
-.bar-list h4{
+.bar-list p{
   background-color: rgba(89, 49, 40, 1);
   color:white;
   text-align:center;
- width: 255px;
+  width: 150px;
+  border-radius: 0px 0px 10px 10px;
+  padding: 5px
 }
 
 .bar-detail h5{
@@ -161,6 +164,9 @@ background-color:#d8ccbc;
 }
 .titlesign{
   padding-top:60px
+}
+.back{
+  float: right
 }
 // /* Color Theme Swatches in Hex */
 // $Cocktail-close-up-in-a-bar-setting.-Blurred-people-in-the-background.-Selective-focus-on-the-icy-drink-and-glass.-1-hex: #F2E399;

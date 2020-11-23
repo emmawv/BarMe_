@@ -52,7 +52,9 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  border: 1px solid white;
+  border-radius: 5px; }
 
 .map {
   margin-left: 30px; }
@@ -68,15 +70,18 @@ body {
   margin-right: 20px; }
 
 .bar-list img {
-  height: 180px;
-  width: 255px;
-  object-fit: cover; }
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0; }
 
-.bar-list h4 {
+.bar-list p {
   background-color: #593128;
   color: white;
   text-align: center;
-  width: 255px; }
+  width: 150px;
+  border-radius: 0px 0px 10px 10px;
+  padding: 5px; }
 
 .bar-detail h5 {
   padding-top: 20px; }
@@ -142,5 +147,8 @@ body {
 
 .titlesign {
   padding-top: 60px; }
+
+.back {
+  float: right; }
 
 /*# sourceMappingURL=style.css.map */

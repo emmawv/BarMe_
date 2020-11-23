@@ -8,12 +8,11 @@ const Bar = require("../models/bar.model")
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10
 
-const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next() : res.render('auth/login', { errorMsg: 'Desautorizado, inicia sesión' }, console.log('oletú'))
-const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Desautorizado, no tienes permisos' }, console.log(req.user.role))
+const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next() : res.render('auth/login', { errorMsg: 'Desautorizado, inicia sesión' })
+const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Desautorizado, no tienes permisos' })
 
 router.get('/profile', ensureAuthenticated, (req, res) => {
     if (req.user.role === 'GUEST') {
-        console.log('You are a guest')
         res.render('profile/user', { user: req.user })
     } else if (req.user.role === 'BOSS') {
         Bar.find({ owner: req.user.id })
@@ -22,7 +21,33 @@ router.get('/profile', ensureAuthenticated, (req, res) => {
     }
 })
 
+router.get('/edit-bar', ensureAuthenticated, checkRole('BOSS'), (req, res) => { 
+    const barId = req.query.id 
+    Bar
+        .findById(barId)
+        .then(bar => {
+            if (req.user.id == bar.owner) {
+                res.render('bars/edit-bar', bar)
+            } else {
+                res.render('auth/login', { errorMsg: 'Desautorizado, no tienes permisos' })
+            }
+        })
+        .catch(err => console.log(err))
+})
 
+router.post('/edit-bar', (req, res) => {
+    const { name, description, image, latitude, longitude } = req.body
+    const location = {
+        type: 'Point',
+        coodinates:[latitude, longitude]
+    }
+    const barId = req.query.id
+
+    Bar
+        .findByIdAndUpdate(barId, { name, description, image, location })
+        .then(() => res.redirect('/profile'))
+        .catch(err => console.log(err))
+})
 
 router.get('/', (req, res) => res.render('index'))
 
@@ -45,14 +70,24 @@ router.post('/new-bar', (req, res) => {
         .catch(err => console.log(err))
 })
 
-// router.get('/:id/new', ensureAuthenticated, checkRole('BOSS'), (req, res) => {
-//     User
-//         .find()
-//         .then(resultado => {
-//             res.render('new-user', { user: req.user, isBoss: req.user.role.includes('BOSS'), resultado })
-//         })
+router.get('/delete-bar', (req, res) => {
+    
+    const barId = req.query.id
 
-// })
+    Bar
+        .findById(barId)
+        .then(bar => {
+            if (req.user.id == bar.owner) {
+                Bar
+                    .findByIdAndDelete(barId)
+                    .then(() => res.redirect('/profile'))
+                    .catch(err => console.log(err))
+            } else {
+                res.render('auth/login', { errorMsg: 'Desautorizado, no tienes permisos' })
+            }
+        })
+        .catch(err => console.log(err))  
+})
 
 module.exports = router
 

@@ -1,11 +1,17 @@
-{{#with user}}
-<p>Welcome {{username}}</p>
-<a href="/new-bar" class="btn btn-dark" style="background-color:  #593128;">Create a new bar</a>
+<div class="container">
+    {{#with user}}
+        <div class="center">
+        <h3>Welcome {{username}}</h3>
+        <a href="/new-bar" class="btn btn-dark" style="background-color:  #593128;">Create a new bar</a>
+        <hr>
+        </div>
+    {{/with}}
 
-{{/with}}
-<hr>
-{{#each bars}}
-<img src="{{image}}"
-<h3>{{name}}</h3>
-<p>{{description}}</p>
-{{/each}}
+    <div class="row">
+        {{#each bars}}
+            <div class="col-lg-4 col-md-3  col-sm-4 col-6 image-square bar-list">
+            <a href='edit-bar?id={{id}}'><img src="{{image}}" alt=""><p>{{name}}</p></a>
+            </div>
+        {{/each}}
+    </div>
+</div>
