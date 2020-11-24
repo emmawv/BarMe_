@@ -28,8 +28,6 @@ function drawMarkers(sitios) {
     let id = myUrl.substring(myUrl.lastIndexOf('/') + 1)
 
     sitios.forEach(elm => {
-        console.log(elm._id)
-        console.log('y mi id es ', id)
         if (elm._id === id) {
             let position = { lat: elm.location.coordinates[0], lng: elm.location.coordinates[1] }
 

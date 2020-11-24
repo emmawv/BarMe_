@@ -6,19 +6,24 @@
             <hr>
             <img src="{{image}}">
             <h5>Description</h5>
-            <p>{{description}}</p> {{/with}}
+            <p>{{description}}</p> 
+        {{/with}}
             <section>
                     <h5>Comments</h5>
                 {{#each bar.comments}}
-
+                    <p>{{comment}}</p>
+                    <small>{{userid}}</small>
                 {{/each}}
-                <form action='/addcom/{{bar.id}}' id="form-comment">
-                <input type="text" class="none" value={{bar.id}}>
-                <input type="text" class="none" value="{{user.id}}" placeholder="{{user.id}}">
-
-                <input type="text" placeholder="Add a comment">
-                <button type = "submit" id="addComment" class="btn comment">Add</button>
+                {{!-- {{#if req.user}} --}}
+                <form method="POST" action="/bars/add-comment/{{bar.id}}">
+                {{!-- <input type="text" class="none" value={{bar.id}}>
+                <input type="text" class="none" value="{{user.id}}" placeholder="{{user.id}}"> --}}
+            
+                <input type="text" placeholder="Add a comment" name="comment">
+                <button type="submit" id="addComment" class="btn comment">Add</button>
                 </form>
+                {{!-- {{/if}} --}}
+               
             </section>
        
         </div>

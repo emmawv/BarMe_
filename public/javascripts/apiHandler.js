@@ -1,16 +1,17 @@
+// class APIHandler {
+//     constructor(baseUrl) {
+//         this.axiosServer = axios.create({
+//             baseURL: baseUrl
+//         })
+//     }
 
+//     addComment = () => {
+//         const inputs = document.querySelector('#form-comment input')
+//         const barId = inputs[0].value
+//         const userId = inputs[1].value
+//         const comments = inputs[2].value
+//         console.log(barId, userId, comments)
+//     }
+
+// }
  
-class CountriesApiHandler {
-
-    constructor() {
-
-        console.log('API handler inicializada')
-
-        this.axiosApp = axios.create({
-            baseURL: 'http://localhost:3000/bars/api'
-        })
-    }
-}
-    // getOneCountry = country => this.axiosApp.get(`/name/${country}`)
-    // getAllCountries = () => this.axiosApp.get('/all')
-    // getCountriesByCurrency = currency => this.axiosApp.get(`/currency/${currency}`)

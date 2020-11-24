@@ -44,10 +44,7 @@ router.get('/signup/owner',(req, res)=> {
 })
 
 router.post('/signup/owner',(req, res)=> {
-    // const username = req.body.username
-    // const password = req.body.password
-    // const telephone = req.body.telephone
-    // const email = req.body.email
+  
     const { username, password, telephone, email } = req.body
 
     if (username === "" || password === "") {
@@ -63,7 +60,6 @@ router.post('/signup/owner',(req, res)=> {
                 return
             }
 
-            // Other validations
             const salt = bcrypt.genSaltSync(bcryptSalt)
             const hashPass = bcrypt.hashSync(password, salt)
 
@@ -77,6 +73,7 @@ router.post('/signup/owner',(req, res)=> {
 router.get('/login',(req, res)=> {
     res.render('auth/login')
 })
+
 router.post("/login", passport.authenticate("local", {
     successRedirect: "/profile",
     failureRedirect: "/login",

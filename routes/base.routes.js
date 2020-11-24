@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const passport = require("passport")
-//const multer = require("multer")
+const multer = require("multer")
 const uploadCloud = require("../configs/cdn-upload.config")
 
 const User = require("../models/user.model")
@@ -97,13 +97,6 @@ router.get('/delete-bar', (req, res) => {
         .catch(err => console.log(err))  
 })
 
-router.get('/bars/:id', (req, res) => {
-    const user=req.user
-    const barId = req.params.id
-    Bar.findById(barId)
-        .then(bar => res.render('bars/bar-details', { bar, myKey, user}))
-        .catch(err => console.log(err))
-})
 module.exports = router
 
 

@@ -1,3 +1,3 @@
 module.exports = app => {
-    app.locals.siteTitle = 'Chuli_Bars'
+    app.locals.siteTitle = 'BarMe_'
 }

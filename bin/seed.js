@@ -6,11 +6,11 @@ const router = express.Router()
 const passport = require("passport")
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10
-const dbtitle = 'Proyect2';
+const dbtitle = 'bar-me';
 mongoose.connect(`mongodb://localhost/${dbtitle}`,  { useUnifiedTopology: true, useNewUrlParser: true });
 Bar.collection.drop()
 User.collection.drop()
-            const salt = bcrypt.genSaltSync(bcryptSalt)
+const salt = bcrypt.genSaltSync(bcryptSalt)
 
 
 const bars = [
@@ -92,15 +92,6 @@ const bars = [
     }
 
 ]
-
-// Promise.all(bars.map(bars => User.create(bars.owner).then(owner => owner.name)))
-//     .then(() => bars.map(bars => User.findOne({ name: bars.owner.name }).then(owner => {
-//         console.log(owner._id,  bars.owner.name)
-//         Object.assign({}, bars, { owner: owner._id })
-//     })))
-//     .then(findOwner => Promise.all(findOwner).then(bars => bars.map(bars => Bar.create(bars))))
-//     .then(savedbars => Promise.all(savedbars).then(bars => bars.forEach(bars => console.log(`Bar ${bars.name} creado`))).then(() => mongoose.connection.close()))
-//     .catch(error => console.log('Error: ', error))
 
 const createOwner = bars.map(bars => {
     const newOwner = new User(bars.owner)
