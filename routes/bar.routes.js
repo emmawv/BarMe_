@@ -28,33 +28,12 @@ router.get('/:id', (req, res) => {
             populate: { path: 'userid'}
         })
         .then(bar => {
-            res.render('bars/bar-details', { bar, myKey, user})
+            console.log(req.user)
+            res.render('bars/bar-details', { bar, myKey,  isLogin: req.user != undefined})
         })
         .catch(err => console.log(err))
 })
 
-router.post('/add-comment/:id', (req, res) => {
-    const user = req.user
-    const barId = req.params.id
-
-    const comment = {
-        userid: user,
-        comment: req.body.comment
-    }
-
-    console.log(comment)
-
-    Bar
-        .findByIdAndUpdate(barId, { comments: comment })
-        .populate({
-            path: 'comments',
-            populate: { path: 'userid' }
-        })
-        .then(() => {
-            res.redirect(`/bars/${barId}`)
-        })
-        .catch(err => console.log(err))
-})
 
 
 module.exports = router

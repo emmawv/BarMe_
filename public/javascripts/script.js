@@ -5,9 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }, false)
 
-// const BarsAPI = new APIHandler()
+const BarsAPI = new APIHandler()
 
 // document.querySelector('#addComment').onclick = e => {
 //     e.preventDefault()
 //     BarsAPI.addComment()
 // }
+document.querySelector('#favButton').onclick = e => {
+  APIHandler.addFav()
+  
+}
