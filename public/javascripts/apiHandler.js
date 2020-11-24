@@ -1,7 +1,7 @@
 // class APIHandler {
-//     constructor(baseUrl) {
+//     constructor() {
 //         this.axiosServer = axios.create({
-//             baseURL: baseUrl
+//             baseURL: 'http://localhost:3000'
 //         })
 //     }
 

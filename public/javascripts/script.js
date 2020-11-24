@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }, false)
 
-// const BarsAPI = new APIHandler('http://localhost:3000/api/barsdetails')
+// const BarsAPI = new APIHandler()
 
 // document.querySelector('#addComment').onclick = e => {
 //     e.preventDefault()
