@@ -12,6 +12,6 @@ const BarsAPI = new APIHandler()
 //     BarsAPI.addComment()
 // }
 document.querySelector('#favButton').onclick = e => {
-  APIHandler.addFav()
+  BarsAPI.addFav()
   
 }
