@@ -3,6 +3,7 @@
         <div class="col-lg-5 col-md-12 bar-detail">
         {{#with bar}}
             <h2>{{name}}</h2>
+            <button id="favButton">Add to favourites</button>
             <hr>
             <img src="{{image}}">
             <h5>Description</h5>
@@ -11,10 +12,10 @@
             <section>
                     <h5>Comments</h5>
                 {{#each bar.comments}}
-                    <p>{{comment}}</p>
-                    <small>{{userid}}</small>
+                    <p><small>{{userid.username}}</small>: {{comment}}</p>
+                    
                 {{/each}}
-                {{!-- {{#if req.user}} --}}
+                {{#if isLogin}}
                 <form method="POST" action="/bars/add-comment/{{bar.id}}">
                 {{!-- <input type="text" class="none" value={{bar.id}}>
                 <input type="text" class="none" value="{{user.id}}" placeholder="{{user.id}}"> --}}
@@ -22,7 +23,7 @@
                 <input type="text" placeholder="Add a comment" name="comment">
                 <button type="submit" id="addComment" class="btn comment">Add</button>
                 </form>
-                {{!-- {{/if}} --}}
+                {{/if}}
                
             </section>
        

@@ -96,6 +96,37 @@ router.get('/delete-bar', (req, res) => {
         })
         .catch(err => console.log(err))  
 })
+router.post('/bars/add-comment/:id', ensureAuthenticated, (req, res) => {
+    const user = req.user
+    const barId = req.params.id
+
+    const comment = {
+        userid: user,
+        comment: req.body.comment
+    }
+
+    Bar
+        .findById(barId)
+        .then(bardata => {
+            console.log(bardata.comments)
+            const comments = bardata.comments.concat(comment)
+            console.log("EEEEEEOOOO", comments  )
+       Bar
+           .findByIdAndUpdate(bardata.id, { comments }, { new: true })
+        .populate({
+            path: 'comments',
+            populate: { path: 'userid' }
+        })
+        .then((bar) => {
+            res.redirect(`/bars/${bar.id}`)
+      
+        })
+                .catch(err => console.log(err))
+        })
+    .catch(err => console.log(err))
+    
+})
+
 
 module.exports = router
 
