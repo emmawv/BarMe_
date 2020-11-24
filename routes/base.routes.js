@@ -9,6 +9,7 @@ const Bar = require("../models/bar.model")
 
 const bcrypt = require("bcrypt");
 const e = require('express')
+const { findById } = require('../models/bar.model')
 const bcryptSalt = 10
 const myKey = process.env.APIKEY
 
@@ -27,8 +28,8 @@ router.get('/profile', ensureAuthenticated, (req, res) => {
 
 
 
-router.get('/edit-bar', ensureAuthenticated, checkRole('BOSS'), (req, res) => { 
-    const barId = req.query.id 
+router.get('/edit-bar', ensureAuthenticated, checkRole('BOSS'), (req, res) => {
+    const barId = req.query.id
     Bar
         .findById(barId)
         .then(bar => {
@@ -79,7 +80,7 @@ router.post('/new-bar', uploadCloud.single("image"), (req, res) => {
 })
 
 router.get('/delete-bar', (req, res) => {
-    
+
     const barId = req.query.id
 
     Bar
@@ -94,39 +95,19 @@ router.get('/delete-bar', (req, res) => {
                 res.render('auth/login', { errorMsg: 'Desautorizado, no tienes permisos' })
             }
         })
-        .catch(err => console.log(err))  
+        .catch(err => console.log(err))
 })
-router.post('/bars/add-comment/:id', ensureAuthenticated, (req, res) => {
-    const user = req.user
-    const barId = req.params.id
+router.post('/profile/favourites', (req, res) => {
 
-    const comment = {
-        userid: user,
-        comment: req.body.comment
-    }
+    console.log("Ha llegado")
 
-    Bar
-        .findById(barId)
-        .then(bardata => {
-            console.log(bardata.comments)
-            const comments = bardata.comments.concat(comment)
-            console.log("EEEEEEOOOO", comments  )
-       Bar
-           .findByIdAndUpdate(bardata.id, { comments }, { new: true })
-        .populate({
-            path: 'comments',
-            populate: { path: 'userid' }
-        })
-        .then((bar) => {
-            res.redirect(`/bars/${bar.id}`)
-      
-        })
-                .catch(err => console.log(err))
-        })
-    .catch(err => console.log(err))
-    
+    // const id = req.user
+    // let { favBars } = req.body
+    // let tempCollection = [...req.user.favBars, ...favBars]
+    // User
+    //     .findByIdAndUpdate(id, { favBar: tempCollection })
+    //     .then(data => console.log(data))
 })
-
 
 module.exports = router
 
