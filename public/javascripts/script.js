@@ -13,7 +13,7 @@ document.querySelector('#favButton').onclick = e => {
   const barid= document.querySelector('#barid input').value
   BarsAPI
     .addFav(barid)
-  ..then((result) => {
+  .then((result) => {
     
   }).catch((err) => {
     

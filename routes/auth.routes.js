@@ -16,7 +16,7 @@ router.post('/signup',(req, res)=> {
     const { username, password } = req.body
 
     if (username === "" || password === "") {
-        res.render("auth/signup", { errorMsg: "Rellena todos los campos" })
+        res.render("auth/signup", { errorMsg: 'Rellena todos los campos' })
         return
     }
 
