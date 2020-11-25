@@ -47,6 +47,7 @@ router.get('/edit-bar', ensureAuthenticated, checkRole('BOSS'), (req, res, next)
 
     const barId = req.query.id
 
+
     Bar
         .findById(barId, { name: 1, description: 1, image: 1, location: 1, owner: 1 })
         .then(bar => {
@@ -131,9 +132,23 @@ router.get('/delete-bar', (req, res, next) => {
             }
         })
         .catch(err => next(err))
+  })
+  
+  
+router.post('/profile/favourites', (req, res) => {
+
+    console.log("Ha llegado")
+
+    // const id = req.user
+    // let { favBars } = req.body
+    // let tempCollection = [...req.user.favBars, ...favBars]
+    // User
+    //     .findByIdAndUpdate(id, { favBar: tempCollection })
+    //     .then(data => console.log(data))>>>>>>> main
+
 })
-
-
+  
+  
 module.exports = router
 
 

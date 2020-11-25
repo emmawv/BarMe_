@@ -1,4 +1,5 @@
-
+let fav = []
+let barlist= []
 document.addEventListener('DOMContentLoaded', () => {
 
   console.log('IronGenerator JS imported successfully!');
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const BarsAPI = new APIHandler()
 
+
 // document.querySelector('#addComment').onclick = e => {
 //     e.preventDefault()
 //     BarsAPI.addComment()
@@ -14,4 +16,5 @@ const BarsAPI = new APIHandler()
 
 document.querySelector('#favButton').onclick = e => {
   BarsAPI.addFav()
+
 }
