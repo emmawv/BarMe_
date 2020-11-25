@@ -16,15 +16,6 @@ const storage = new CloudinaryStorage({
     }
 })
 
-// const storage = cloudinaryStorage({
-//     cloudinary: cloudinary,
-//     folder: 'Project-2',
-//     allowedFormats: ['jpg', 'png'],
-//     filename: function (req, file, cb) {
-//         cb(null, file.originalname); // The file on cloudinary would have the same name as the original file name
-//     }
-// })
-
 const uploadCloud = multer({ storage: storage });
 
 module.exports = uploadCloud
