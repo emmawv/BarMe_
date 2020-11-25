@@ -1,0 +1,34 @@
+<div class="container">
+    <h1 class="center beige titlesign">Edit your info</h1>
+    <form action="/edit-user" method='POST' class="edit-profile" enctype="multipart/form-data">
+        <div class="row flex-wrap-reverse">
+            <div class="col-md-7 col-sm-12">
+                <label>Username</label>
+                <input type="text" name="username" value={{username}}>
+                <br>
+                <label>Password</label>
+                <input type="password" name="password" value={{password}}>
+                <br>
+                <label>Email</label>
+                <input type="email" name="email" value={{email}}>
+                <br>
+                <label>Telephone</label>
+                <input type="tel" name="telephone" value={{telephone}}>
+            </div>
+
+            <div class="col-md-5 col-sm-12">
+                <label>Image</label><br>
+                <img src="{{profileImg}}" alt="Bar photo" style="width: 100px">
+                <input type="file" class="form-control" name="profileImg" value="{{profileImg}}">
+            </div>
+        </div>
+
+        <button type="submit" class="btn">Sign Up</button>
+
+        {{#if errorMsg}}
+        <div>
+            {{errorMsg}}
+        </div>
+        {{/if}}
+    </form>
+</div>

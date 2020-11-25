@@ -1,29 +1,21 @@
 <div class="backg-signup">
-    <div class="filter-login">   
+    <div class="filter-login">
+        <div class="container">
+            <h1 class="center beige titlesign">Sign Up</h1>
+            <form action="/signup" method='POST' class="signup">
 
-<div class="container">
- <h1 class="center beige titlesign">Sign Up</h1>
-    <form action="/signup" method='POST' class="signup">
-        <h5>Username</h5>
+                {{>login}}
+                <br>
+                <button type="submit" class="btn">Sign Up</button>
+                <br>
+                <a href="/signup/owner">Are you an owner?</a>
+                {{#if errorMsg}}
+                <div>
+                    {{errorMsg}}
+                </div>
+                {{/if}}
 
-        <input type="text" placeholder="Name" name="username">
-        <br>
-        <br>
-        <h5>Password</h5>
-
-        <input type="password" placeholder="Password" name="password">
-        <br>
-        <br>
-        <button type="submit" class="btn">Sign Up</button>
-        <br>
-        <a href="/signup/owner">Are you an owner?</a>
-        {{#if errorMsg}}
-        <div>
-            {{errorMsg}}
+            </form>
         </div>
-        {{/if}}
-
-    </form>
-</div>
-</div>
+    </div>
 </div>
