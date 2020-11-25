@@ -9,14 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 const BarsAPI = new APIHandler()
 
 
+// document.querySelector('#addComment').onclick = e => {
+//     e.preventDefault()
+//     BarsAPI.addComment()
+// }
+
 document.querySelector('#favButton').onclick = e => {
-  const barid= document.querySelector('#barid input').value
-  BarsAPI
-    .addFav(barid)
-  .then((result) => {
-    
-  }).catch((err) => {
-    
-  });
-  
+  BarsAPI.addFav()
+
 }

@@ -1,85 +1,120 @@
 const express = require('express')
-const router = express.Router()
-const passport = require("passport")
-const multer = require("multer")
 const uploadCloud = require("../configs/cdn-upload.config")
 
-const User = require("../models/user.model")
+const router = express.Router()
+
 const Bar = require("../models/bar.model")
+const User = require("../models/user.model")
 
-const bcrypt = require("bcrypt");
-const e = require('express')
-const { findById } = require('../models/bar.model')
-const bcryptSalt = 10
-const myKey = process.env.APIKEY
 
-const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next() : res.render('auth/login', { errorMsg: 'Desautorizado, inicia sesión' })
-const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Desautorizado, no tienes permisos' })
+//Checks if user is logged in
+const ensureAuthenticated = (req, res, next) => req.isAuthenticated() ? next() : res.render('auth/login', { errorMsg: 'Unauthorised, log in' })
 
-router.get('/profile', ensureAuthenticated, (req, res) => {
+
+//Checks if user's role is allowed to do action
+const checkRole = admittedRoles => (req, res, next) => admittedRoles.includes(req.user.role) ? next() : res.render('auth/login', { errorMsg: 'Unauthorised, you do not have permissions' })
+
+
+//Renders main page
+router.get('/', (req, res) => res.render('index'))
+
+
+//Renders user's profile page
+router.get('/profile', ensureAuthenticated, (req, res, next) => {
     if (req.user.role === 'GUEST') {
         res.render('profile/user', { user: req.user })
     } else if (req.user.role === 'BOSS') {
-        Bar.find({ owner: req.user.id })
+        Bar
+            .find({ owner: req.user.id })
             .then(bars => res.render('profile/owner', { user: req.user, bars: bars }))
-            .catch(err => console.log(err))
+            .catch(err => next(err))
     }
 })
 
 
+//Renders the form to edit user's profile
+router.get('/edit-user', ensureAuthenticated, (req, res) => {
 
-router.get('/edit-bar', ensureAuthenticated, checkRole('BOSS'), (req, res) => {
+    User
+        .findById(req.user.id, { username: 1, password: 1, location: 1, email: 1, profileImg: 1})
+        .then(user => res.render('profile/edit-user', user))
+        .catch(err => next(err))
+})
+
+
+//Renders the form to edit an owner's bar
+router.get('/edit-bar', ensureAuthenticated, checkRole('BOSS'), (req, res, next) => {
+
     const barId = req.query.id
+
+
     Bar
-        .findById(barId)
+        .findById(barId, { name: 1, description: 1, image: 1, location: 1, owner: 1 })
         .then(bar => {
             if (req.user.id == bar.owner) {
                 res.render('bars/edit-bar', bar)
             } else {
-                res.render('auth/login', { errorMsg: 'Desautorizado, no tienes permisos' })
+                res.render('auth/login', { errorMsg: 'Unauthorised, you do not have permissions' })
             }
         })
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
-router.post('/edit-bar', (req, res) => {
-    const { name, description, image, latitude, longitude } = req.body
-    const location = {
-        type: 'Point',
-        coodinates:[latitude, longitude]
-    }
+
+//Updates the bar in the DB
+router.post('/edit-bar', uploadCloud.single("image"), (req, res, next) => {
+
     const barId = req.query.id
-
-    Bar
-        .findByIdAndUpdate(barId, { name, description, image, location })
-        .then(() => res.redirect('/profile'))
-        .catch(err => console.log(err))
-})
-
-router.get('/', (req, res) => res.render('index'))
-
-
-router.get('/new-bar', ensureAuthenticated, checkRole(['BOSS']), (req, res) => res.render('bars/new-bar', { user: req.user }))
-
-router.post('/new-bar', uploadCloud.single("image"), (req, res) => {
     const image = req.file.path
     const { name, description, latitude, longitude } = req.body
-    console.log(req.file.path)
+    const location = {
+        type: 'Point',
+        coodinates: [latitude, longitude]
+    }
+    
+        Bar
+            .findByIdAndUpdate(barId, { name, description, image, location })
+            .then(() => res.redirect('/profile'))
+            .catch(err => next(err))
 
+})
+
+
+//Renders form to create a new bar
+router.get('/new-bar', ensureAuthenticated, checkRole(['BOSS']), (req, res) => res.render('bars/new-bar', { user: req.user }))
+
+
+//Creates the new bar in the DB
+router.post('/new-bar', uploadCloud.single("image"), (req, res, next) => {
+
+    const owner = req.user.id
+    const { name, description, latitude, longitude } = req.body
     const location = {
         type: 'Point',
         coordinates: [latitude, longitude]
     }
 
-    const owner = req.user.id
+    if (req.file !== undefined) {
 
-    Bar
-        .create({ name, description, owner, image, location })
-        .then(() => res.redirect('/profile'))
-        .catch(err => console.log(err))
+        const image = req.file.path
+
+        Bar
+            .create({ name, description, image, owner, location })
+            .then(() => res.redirect('/profile'))
+            .catch(err => next(err))
+
+    } else {
+
+        Bar
+            .create({ name, description, owner, location })
+            .then(() => res.redirect('/profile'))
+            .catch(err => next(err))
+    }
 })
 
-router.get('/delete-bar', (req, res) => {
+
+//Deletes bar from the DB
+router.get('/delete-bar', (req, res, next) => {
 
     const barId = req.query.id
 
@@ -91,12 +126,15 @@ router.get('/delete-bar', (req, res) => {
                     .findByIdAndDelete(barId)
                     .then(() => res.redirect('/profile'))
                     .catch(err => console.log(err))
+
             } else {
-                res.render('auth/login', { errorMsg: 'Desautorizado, no tienes permisos' })
+                res.render('auth/login', { errorMsg: 'Unauthorised, you do not have permissions' })
             }
         })
-        .catch(err => console.log(err))
-})
+        .catch(err => next(err))
+  })
+  
+  
 router.post('/profile/favourites', (req, res) => {
 
     console.log("Ha llegado")
@@ -106,9 +144,11 @@ router.post('/profile/favourites', (req, res) => {
     // let tempCollection = [...req.user.favBars, ...favBars]
     // User
     //     .findByIdAndUpdate(id, { favBar: tempCollection })
-    //     .then(data => console.log(data))
-})
+    //     .then(data => console.log(data))>>>>>>> main
 
+})
+  
+  
 module.exports = router
 
 

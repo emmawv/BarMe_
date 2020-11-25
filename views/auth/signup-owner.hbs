@@ -1,23 +1,23 @@
 <div class="container">
     <form action="/signup/owner" method='POST'>
 
-        <input type="text" placeholder="Name" name="username">
-        <br>
-        <br>
+        <h1 class="center beige">Sign Up</h1>
+
+        {{>login}}
+
+        <h5>Email</h5>
         <input type="text" placeholder="email" name="email">
-        <br>
-        <br>
-        <input type="text" placeholder="Telephone" name="telephone">
-        <br>
-        <br>
-        <input type="password" placeholder="Password" name="password">
-        <br>
-        <br>
-        <button type="submit">Sign Up</button>
-        <br>
-        <a href="/singup/owner">Are you an owner?</a>
+
+        <h5>Telephone number</h5>
+        <input type="text" name="telephone">
+
+        <button type="submit" class="btn">Log In</button>
+
         {{#if errorMsg}}
         <div>
             {{errorMsg}}
         </div>
         {{/if}}
+
+    </form>
+</div>
