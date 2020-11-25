@@ -4,28 +4,49 @@ body {
 .center {
   text-align: center; }
 
-.main-page {
-  background: url("https://res.cloudinary.com/djqsmqs26/image/upload/v1606045413/Project-2/patrick-tomasso-GXXYkSwndP4-unsplash_gxlg5o.jpg") no-repeat center/cover;
-  height: 100vh;
-  text-align: center;
-  z-index: -10; }
+.beige {
+  color: #d8ccbc;
+  padding-top: 30px; }
 
-.filter-login {
-  height: 100vh;
-  background-color: rgba(89, 49, 40, 0.5);
-  z-index: 10; }
+.formtitle {
+  padding-top: 100px;
+  text-align: center; }
 
 .filter {
   height: 100vh;
   background-color: rgba(89, 49, 40, 0.5);
   z-index: 10; }
 
-.filter > div {
+.flex {
+  display: flex;
+  align-items: center; }
+
+.backg {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white; }
+
+.login-backg {
+  background-image: url("https://res.cloudinary.com/djqsmqs26/image/upload/v1606068394/Project-2/radovan-46Yad80Ynp4-unsplash_sgk4dz.jpg "); }
+
+.backg-signupowner {
+  background-image: url("https://res.cloudinary.com/djqsmqs26/image/upload/v1606325747/Project-2/alexander-popov-2GNBoMgKYEo-unsplash_n4lft1.jpg "); }
+
+.backg-signup {
+  background-image: url("https://res.cloudinary.com/djqsmqs26/image/upload/v1606069664/Project-2/adam-jaime-dmkmrNptMpw-unsplash_kyuc9b.jpg "); }
+
+.main-page {
+  background: url("https://res.cloudinary.com/djqsmqs26/image/upload/v1606045413/Project-2/patrick-tomasso-GXXYkSwndP4-unsplash_gxlg5o.jpg") no-repeat center/cover;
+  text-align: center; }
+
+.main > div {
   z-index: 20;
   padding-top: 15rem;
   color: white; }
 
-.filter a {
+.main a {
   font-size: 1.5em; }
 
 .navbar {
@@ -35,15 +56,20 @@ body {
   z-index: 10; }
 
 #barsMap {
-  height: 100vh;
+  height: 95vh;
   z-index: 1; }
+
+.position-fixed {
+  left: 59%;
+  top: 5%; }
 
 .wrapper {
   padding: 40px; }
 
 #barMap {
-  height: 500px;
-  z-index: 10; }
+  height: 90vh;
+  z-index: -10;
+  margin-top: 40px; }
 
 .image-square {
   text-align: center;
@@ -53,15 +79,36 @@ body {
   border: 1px solid white;
   border-radius: 5px; }
 
-.row {
-  margin: 0; }
+.bar-detail {
+  margin-top: 40px; }
 
-.details img {
-  width: 400px;
-  z-index: -1; }
+.details-img {
+  width: 90%; }
 
-.barlist {
-  margin-right: 20px; }
+.profileImg {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin: 5px; }
+
+.comment {
+  margin: 0;
+  padding: 0; }
+
+.comment-form {
+  width: 80%;
+  margin: 15px 0px 5px; }
+
+.form-btn {
+  color: #0d2426;
+  background-color: #d8ccbc;
+  margin-bottom: 20px; }
+
+.hrcom {
+  width: 80%;
+  margin-left: 0; }
 
 .bar-list img {
   height: 150px;
@@ -80,73 +127,32 @@ body {
 .bar-detail h5 {
   padding-top: 20px; }
 
-.bar-detail img {
-  height: 250px;
-  object-fit: cover; }
-
-.bar-detail .heart {
-  height: 30px;
-  width: 30px;
-  background-color: pink;
-  fill: black; }
+.bar-detail {
+  object-fit: cover;
+  width: 90%; }
 
 .user-profile {
   text-align: center; }
 
-.login {
-  text-align: left;
-  padding-top: 40px; }
+.signup {
+  padding-top: 80px; }
 
-.login .btn {
+.form input {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px; }
+
+.form button {
+  width: 100%;
   color: #0d2426;
   background-color: #d8ccbc;
-  width: 70%;
-  max-width: 600px; }
-
-.beige {
-  color: #d8ccbc;
-  padding-top: 30px; }
-
-.login input {
-  width: 70%;
-  max-width: 600px; }
-
-.login-backg {
-  background-image: url("https://res.cloudinary.com/djqsmqs26/image/upload/v1606068394/Project-2/radovan-46Yad80Ynp4-unsplash_sgk4dz.jpg ");
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: white; }
-
-.backg-signup {
-  background-image: url("https://res.cloudinary.com/djqsmqs26/image/upload/v1606069664/Project-2/adam-jaime-dmkmrNptMpw-unsplash_kyuc9b.jpg ");
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: white; }
-
-.signup {
-  text-align: right;
-  padding-top: 100px; }
-
-.signup input {
-  width: 70%;
-  max-width: 500px; }
-
-.signup button {
-  width: 70%;
-  max-width: 500px;
-  color: #0d2426;
-  background-color: #d8ccbc; }
+  padding: 10px;
+  margin: 10px 0; }
 
 .signup a {
-  margin-top: 20px;
-  color: white; }
-
-.titlesign {
-  padding-top: 60px; }
+  color: white;
+  font-size: 1.3em; }
 
 .back {
   float: right; }
@@ -159,15 +165,5 @@ body {
     display: none; }
   .bar-detail {
     text-align: center; } }
-
-@media (max-width: 502px) {
-  .bar-detail img {
-    width: 300px; } }
-
-@media (min-width: 992px) {
-  #barsMap {
-    position: fixed;
-    left: 0%;
-    top: 0; } }
 
 /*# sourceMappingURL=style.css.map */

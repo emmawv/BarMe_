@@ -62,10 +62,11 @@ router.get('/:id', (req, res) => {
         .catch(err => next(err))
 })
 
-router.post('/add-comment/:id',(req, res) => {
+//Updates bar in the DB with the comment
+router.post('/add-comment/:id', (req, res, next) => {
+
     const user = req.user
     const barId = req.params.id
-
     const comment = {
         userid: user,
         comment: req.body.comment
@@ -74,23 +75,18 @@ router.post('/add-comment/:id',(req, res) => {
     Bar
         .findById(barId)
         .then(bardata => {
-            console.log(bardata.comments)
+
             const comments = bardata.comments.concat(comment)
-            console.log("EEEEEEOOOO", comments  )
-       Bar
-           .findByIdAndUpdate(bardata.id, { comments }, { new: true })
-        .populate({
-            path: 'comments',
-            populate: { path: 'userid' }
+
+            return Bar
+                .findByIdAndUpdate(bardata.id, { comments }, { new: true })
+                .populate({
+                    path: 'comments',
+                    populate: { path: 'userid' }
+                })
         })
-        .then((bar) => {
-            res.redirect(`/bars/${bar.id}`)
-      
-        })
-                .catch(err => console.log(err))
-        })
-    .catch(err => console.log(err))
-    
-})
+        .then((bar) => res.redirect(`/bars/${bar.id}`))
+        .catch(err => next(err))
+}) 
 
 module.exports = router

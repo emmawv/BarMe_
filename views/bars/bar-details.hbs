@@ -1,27 +1,30 @@
 <div class="container details">
     <div class="row">
-        
+
         <div class="col-lg-5 col-md-12 bar-detail">
-           
+
             {{#with bar}}
             {{>barInfo}}
             {{/with}}
 
             <section>
                 <h5>Comments</h5>
+                <hr class="hrcom">
                 {{#each bar.comments}}
-                <p>{{userid.username}}: {{comment}}</p>
+                <div class="flex"><img src="{{userid.profileImg}}" alt="" class="profileImg">
+                    <p class="comment"><strong>{{userid.username}}</strong>: {{comment}}</p>
+                </div>
                 {{/each}}
 
                 {{#if isLogin}}
-                    <form method="POST" action="/bars/add-comment/{{bar.id}}">
-                    
-                        {{!-- <input type="text" class="none" value={{bar.id}}>
+                <form method="POST" action="/bars/add-comment/{{bar.id}}">
+
+                    {{!-- <input type="text" class="none" value={{bar.id}}>
                         <input type="text" class="none" value="{{user.id}}" placeholder="{{user.id}}"> --}}
-                    
-                        <input type="text" placeholder="Add a comment" name="comment">
-                        <button type="submit" id="addComment" class="btn comment">Add</button>
-                    </form>
+
+                    <textarea type="text-area" placeholder="Add a comment" name="comment" class="form-control comment-form"></textarea>
+                    <button type="submit" id="addComment" class="btn form-btn">Add</button>
+                </form>
 
                 {{/if}}
             </section>

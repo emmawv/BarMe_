@@ -42,6 +42,31 @@ router.get('/edit-user', ensureAuthenticated, (req, res) => {
 })
 
 
+//Update the user in the DB
+router.post('/edit-user', uploadCloud.single("profileImg"), (req, res) => {
+
+    const userid = req.user.id
+    const { name, email, telephone } = req.body
+    if (req.file !== undefined) {
+
+        const profileImg = req.file.path
+
+        User
+            .findByIdAndUpdate(userid, { name, email, profileImg, telephone })
+            .then(() => res.redirect('/profile'))
+            .catch(err => console.log(err))
+    }
+    else {
+
+        User
+            .findByIdAndUpdate(userid, { name, email, telephone })
+            .then(() => res.redirect('/profile'))
+            .catch(err => console.log(err))
+        
+    }
+})
+
+
 //Renders the form to edit an owner's bar
 router.get('/edit-bar', ensureAuthenticated, checkRole('BOSS'), (req, res, next) => {
 
@@ -65,18 +90,29 @@ router.get('/edit-bar', ensureAuthenticated, checkRole('BOSS'), (req, res, next)
 router.post('/edit-bar', uploadCloud.single("image"), (req, res, next) => {
 
     const barId = req.query.id
-    const image = req.file.path
+    const image = re.file.path
     const { name, description, latitude, longitude } = req.body
     const location = {
         type: 'Point',
         coodinates: [latitude, longitude]
     }
     
+    if (req.file !== undefined) {
+
+        const image = req.file.path
+
         Bar
             .findByIdAndUpdate(barId, { name, description, image, location })
             .then(() => res.redirect('/profile'))
             .catch(err => next(err))
+    } else {
 
+        Bar
+            .findByIdAndUpdate(barId, { name, description, location })
+            .then(() => res.redirect('/profile'))
+            .catch(err => next(err))
+
+    }
 })
 
 

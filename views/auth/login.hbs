@@ -1,20 +1,23 @@
-<div class="login-backg">
-    <div class="filter-login">
+<div class="login-backg backg">
+    <div class="filter">
         <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-8 col-lg-6">
+                    <h1 class="center formtitle beige">Log In</h1>
 
-            <h1 class="center beige">Log In</h1>
+                    <form action="/login" method='POST' class="login form">
+                        {{>login}}
 
-            <form action="/login" method='POST' class="login">
-                {{>login}}
+                        <button type="submit" class="btn">Log In</button>
 
-                <button type="submit" class="btn">Log In</button>
-
-                {{#if errorMsg}}
-                <div>
-                    {{errorMsg}}
+                        {{#if errorMsg}}
+                        <div>
+                            {{errorMsg}}
+                        </div>
+                        {{/if}}
+                    </form>
                 </div>
-                {{/if}}
-            </form>
+            </div>
         </div>
     </div>
 </div>

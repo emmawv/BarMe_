@@ -1,23 +1,31 @@
-<div class="container">
-    <form action="/signup/owner" method='POST'>
+<div class="backg-signupowner backg">
+    <div class="filter">
+        <div class="container form">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-8 col-lg-6">
 
-        <h1 class="center beige">Sign Up</h1>
+                    <form action="/signup/owner" method='POST'>
+                        <h1 class="center formtitle beige">Sign Up</h1>
 
-        {{>login}}
+                        {{>login}}
 
-        <h5>Email</h5>
-        <input type="text" placeholder="email" name="email">
+                        <h5>Email</h5>
+                        <input type="text" placeholder="email" name="email">
 
-        <h5>Telephone number</h5>
-        <input type="text" name="telephone">
+                        <h5>Telephone number</h5>
+                        <input type="text" name="telephone">
+                        <br>
+                        <button type="submit" class="btn">Log In</button>
 
-        <button type="submit" class="btn">Log In</button>
+                        {{#if errorMsg}}
+                        <div>
+                            {{errorMsg}}
+                        </div>
+                        {{/if}}
 
-        {{#if errorMsg}}
-        <div>
-            {{errorMsg}}
+                    </form>
+                </div>
+            </div>
         </div>
-        {{/if}}
-
-    </form>
+    </div>
 </div>
