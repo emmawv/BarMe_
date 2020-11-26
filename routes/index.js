@@ -5,4 +5,5 @@ module.exports = app => {
     app.use('/', require('./auth.routes.js'))
     app.use('/bars', require('./bar.routes.js'))
     app.use('/api', require('./api.routes.js'))
+    app.use('/send-email', require('./email.routes.js'))
 }

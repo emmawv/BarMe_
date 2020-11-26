@@ -46,7 +46,7 @@ router.post('/add-comment/:id', (req, res, next) => {
 
 
 //Renders page with selected bar info
-router.get('/:id', (req, res) => {
+router.get('/:id', (req, res, next) => {
 
     const barId = req.params.id
 
@@ -56,6 +56,7 @@ router.get('/:id', (req, res) => {
             path: 'comments',
             populate: { path: 'userid' }
         })
+        .populate('owner')
         .then(bar => {
             res.render('bars/bar-details', { bar, myKey, isLogin: req.user != undefined })
         })

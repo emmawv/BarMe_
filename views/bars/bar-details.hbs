@@ -1,17 +1,27 @@
 <div class="container details">
-    <div class="row">
+    <a href="/bars"><img
+            src="https://res.cloudinary.com/djqsmqs26/image/upload/v1606388728/Project-2/Orion_arrow-left_1_t20hhg.svg"
+            alt="back arrow" class="icon" />Back to bars</a>
+    <div class="heading">
+        <h2>{{bar.name}}</h2> <button class="btn form-btn" id="favButton">Add to favourites</button>
+        <hr>
+    </div>
 
-        <div class="col-lg-5 col-md-12 bar-detail">
+    <div class="row bar-detail">
+
+        <div class="col-lg-7 col-md-12">
 
             {{#with bar}}
             {{>barInfo}}
             {{/with}}
 
-            <section>
+            <section class="comments-section">
                 <h5>Comments</h5>
                 <hr class="hrcom">
+                
                 {{#each bar.comments}}
-                <div class="flex"><img src="{{userid.profileImg}}" alt="" class="profileImg">
+                <div class="flex">
+                    <img src="{{userid.profileImg}}" alt="" class="profileImg">
                     <p class="comment"><strong>{{userid.username}}</strong>: {{comment}}</p>
                 </div>
                 {{/each}}
@@ -22,17 +32,45 @@
                     {{!-- <input type="text" class="none" value={{bar.id}}>
                         <input type="text" class="none" value="{{user.id}}" placeholder="{{user.id}}"> --}}
 
-                    <textarea type="text-area" placeholder="Add a comment" name="comment" class="form-control comment-form"></textarea>
+                    <textarea type="text-area" placeholder="Add a comment" name="comment"
+                        class="form-control comment-form"></textarea>
                     <button type="submit" id="addComment" class="btn form-btn">Add</button>
                 </form>
-
                 {{/if}}
+
             </section>
 
         </div>
-
-        <div id="barMap" class="col-lg-7 col-md-12"></div>
-
+        <div class="col-lg-5 col-md-12">
+            <div id="barMap"></div>
+            <section class="contact">
+                <h5>Contact the owner</h5>
+                <hr>
+                <a href="https://api.whatsapp.com/send?phone=34{{bar.owner.telephone}}"><img
+                src="https://res.cloudinary.com/djqsmqs26/image/upload/v1606388472/Project-2/wpp-logo_fsrlvb.png"
+                alt="mail logo"/></a>
+                <a href="https://api.whatsapp.com/send?phone=34{{bar.owner.telephone}}&text=Contacta!"><img
+                src="https://res.cloudinary.com/djqsmqs26/image/upload/v1606393505/Project-2/contacto-mail-icono_yqc0gj.png"
+                alt="whatsapp logo" id="mail-btn"/></a>
+                
+                <form method="POST" action="/send-email" class='none' id='mail-form'>
+                    <div class='form-group'>
+                        <input type="text" class="none" value="{{bar.id}}" name="barId">
+                        
+                        <input name='email' type='email' class='form-control none' id='to' value={{bar.owner.email}}>
+                    </div>
+                    <div class='form-group'>
+                        <label for='subject'>Asunto</label>
+                        <input name='subject' type='text' class='form-control' id='subject'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='message'>Mensaje</label>
+                        <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                    </div>
+                    <button type='submit' class='btn btn-dark btn-block'>Enviar email</button>
+                </form>
+            </section>
+        </div>
     </div>
 </div>
 

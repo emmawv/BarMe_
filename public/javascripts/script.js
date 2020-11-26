@@ -1,12 +1,7 @@
 let fav = []
 let barlist= []
-document.addEventListener('DOMContentLoaded', () => {
 
-  console.log('IronGenerator JS imported successfully!');
-
-}, false)
-
-const BarsAPI = new APIHandler()
+//const BarsAPI = new APIHandler()
 
 
 // document.querySelector('#addComment').onclick = e => {
@@ -14,7 +9,11 @@ const BarsAPI = new APIHandler()
 //     BarsAPI.addComment()
 // }
 
-document.querySelector('#favButton').onclick = e => {
-  BarsAPI.addFav()
+// document.querySelector('#favButton').onclick = e => {
+//   BarsAPI.addFav()
+// }
 
+document.querySelector('#mail-btn').onclick = e => {
+  e.preventDefault()
+  document.querySelector('#mail-form').classList.remove('none')
 }

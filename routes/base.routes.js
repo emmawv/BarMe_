@@ -36,7 +36,7 @@ router.get('/profile', ensureAuthenticated, (req, res, next) => {
 router.get('/edit-user', ensureAuthenticated, (req, res) => {
 
     User
-        .findById(req.user.id, { username: 1, password: 1, location: 1, email: 1, profileImg: 1})
+        .findById(req.user.id, { username: 1, password: 1, location: 1, email: 1, profileImg: 1, telephone: 1})
         .then(user => res.render('profile/edit-user', user))
         .catch(err => next(err))
 })
