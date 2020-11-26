@@ -27,9 +27,10 @@
                     {{#with location}}
                     <h4>Location</h4>
                     <label>Latitude</label>
-                    <input type="text" class="form-control" name="latitude" value="{{coordinates.[0]}}">
+                    <input type="text" id="locationmaps">
+                    <input type="text" class="form-control none" name="latitude" value="{{coordinates.[0]}}">
                     <label>Longitude</label>
-                    <input type="text" class="form-control" name="longitude" value="{{coordinates.[1]}}">
+                    <input type="text" class="form-control none" name="longitude" value="{{coordinates.[1]}}">
                     {{/with}}
                 </div>
 

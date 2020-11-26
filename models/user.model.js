@@ -20,7 +20,12 @@ const userSchema = new Schema({
         type: String,
         default: "https://res.cloudinary.com/djqsmqs26/image/upload/v1606298769/Project-2/pngwing.com_rl5rhk.png"
     },
-    favBars: [String],
+    favBars: [{
+        barid: {
+            type: Schema.Types.ObjectId,
+            ref: 'Bar'
+        }
+    }],
     telephone: String
 }, { timestamps: true })
 

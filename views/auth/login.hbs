@@ -7,12 +7,13 @@
 
                     <form action="/login" method='POST' class="login form">
                         {{>login}}
-
                         <button type="submit" class="btn">Log In</button>
 
                         {{#if errorMsg}}
                         <div>
-                            {{errorMsg}}
+                            <p style="margin-top: 10px;background:  color: white; padding: 3px; font-size: 1.5em;">
+                                {{errorMsg}}
+                            </p>
                         </div>
                         {{/if}}
                     </form>

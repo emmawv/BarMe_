@@ -49,6 +49,7 @@ router.post('/add-comment/:id', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
 
     const barId = req.params.id
+    let fav = []
 
     Bar
         .findById(barId, { name: 1, description: 1, image: 1, comments: 1, location: 1, owner: 1 })
@@ -58,7 +59,13 @@ router.get('/:id', (req, res, next) => {
         })
         .populate('owner')
         .then(bar => {
-            res.render('bars/bar-details', { bar, myKey, isLogin: req.user != undefined })
+            if (req.user != undefined) {
+                req.user.favBars.forEach(elm => elm.barid == barId ? fav.push(elm) : null)
+                res.render('bars/bar-details', { bar, myKey, isLogin: req.user != undefined, isFav: fav.length })
+            }
+            if (req.user == undefined) {
+                res.render('bars/bar-details', { bar, myKey})
+            }
         })
         .catch(err => next(err))
 })
@@ -88,6 +95,6 @@ router.post('/add-comment/:id', (req, res, next) => {
         })
         .then((bar) => res.redirect(`/bars/${bar.id}`))
         .catch(err => next(err))
-}) 
+})
 
 module.exports = router

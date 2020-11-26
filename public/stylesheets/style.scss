@@ -10,7 +10,7 @@ body {
 
 .beige{
   color:#d8ccbc;
-  padding-top:30px
+  padding-top: 30px
 }
 
 .formtitle{
@@ -45,8 +45,8 @@ body {
 .backg{
   height: 110vh;
   background-repeat: no-repeat;
-  background-position:center;
-  background-size:cover;
+  background-position: center;
+  background-size: cover;
   color:white
 }
 
@@ -98,7 +98,7 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   border-radius: 5px;
   transition: transform .5s;
 
@@ -120,7 +120,7 @@ body {
 .bar-list p{
   background-color: rgba(89, 49, 40, 1);
   color:white;
-  text-align:center;
+  text-align: center;
   width: 150px;
   border-radius: 0px 0px 10px 10px;
   padding: 5px
@@ -134,12 +134,12 @@ body {
 }
 
 .position-fixed{
-  left:58.5%;
-  top:8%
+  left: 58.5%;
+  top: 8%
 }
 
 .wrapper{
-  margin:80px 40px;
+  margin: 80px 40px;
 }
 
 
@@ -182,13 +182,13 @@ body {
 }
 
 .comment{
-  margin:0;
+  margin: 0;
   padding: 0;
 }
 
 .comment-form{
   width: 80%;
-  margin:15px 0px 5px 
+  margin: 15px 0px 5px 
 }
 
 .form-btn{
@@ -220,8 +220,8 @@ body {
 .form input {
   display:inline-block;
   width: 100%;
-  padding:10px;
-  margin-bottom:20px;
+  padding: 10px;
+  margin-bottom: 20px;
   border-style: none;
   border: 1px solid grey;
   border-radius: 5px
@@ -231,13 +231,13 @@ body {
   width: 100%;
   color:#0d2426;
   background-color:#d8ccbc;
-  padding:10px;
+  padding: 10px;
   margin: 10px 0   
 }
 
 .signup a{
   color:white;
-  font-size:1.3em
+  font-size: 1.3em
 }
 
 .back{
@@ -245,13 +245,18 @@ body {
 }
 
 .none{
-  display:none
+  display: none
 }
 
 .edit-profimg{
-  width: 300px;
-  height: 500px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
+}
+.delete-user{
+  width: 100%;
+  padding: 10px;
+  margin-left: 5px
 }
 
 
@@ -266,7 +271,7 @@ body {
 
 @media (max-width: 992px) {
   #barsMap{
-    display:none
+    display: none
   }
 
   .bar-detail{
@@ -281,7 +286,7 @@ body {
 
   .comments-section{
     hr, .flex{
-      margin:0 auto;
+      margin: 0 auto;
     }
 
     .profileImg{

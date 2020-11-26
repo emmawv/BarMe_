@@ -48,8 +48,8 @@ router.post('/signup/owner', (req, res) => {
 
     const { username, password, telephone, email } = req.body
 
-    if (username === "" || password === "") {
-        res.render("auth/signup", { errorMsg: 'Please fill in all the fields' })
+    if (username === "" || password === "" || telephone === "" || email === "") {
+        res.render("auth/signup-owner", { errorMsg: 'Please fill in all the fields' })
         return
     }
 
@@ -69,7 +69,7 @@ router.post('/signup/owner', (req, res) => {
 
 
 //Renders page with 'Log In' form
-router.get('/login', (req, res) => res.render('auth/login'))
+router.get('/login', (req, res) => res.render('auth/login', { errorMsg: req.flash("error") }))
 
 
 //Logs in to user session

@@ -186,9 +186,14 @@ body {
   display: none; }
 
 .edit-profimg {
-  width: 300px;
-  height: 500px;
+  width: 200px;
+  height: 200px;
   object-fit: cover; }
+
+.delete-user {
+  width: 100%;
+  padding: 10px;
+  margin-left: 5px; }
 
 @media (max-width: 1200px) {
   #barMap {

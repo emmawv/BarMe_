@@ -1,4 +1,14 @@
 <div class="container user-profile">
-<h3>Welcome {{user.username}}</h3>
-<h4>Your favorites</h4>
-</div>
+    <h3>Welcome {{user.username}}</h3>
+    <h4>Your favorites</h4>
+    <div class=" row bar-list ">
+        {{#each user.favBars}}
+        <div class="col-lg-4 col-md-3  col-sm-4 col-6  image-square">
+            <a href='bars/{{barid.id}}'>
+                <img src="{{barid.image}}" alt="Bar photo">
+                <p>{{barid.name}}</p>
+            </a>
+        </div>
+   
+    {{/each}}
+</div> </div>

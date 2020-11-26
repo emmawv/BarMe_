@@ -11,6 +11,10 @@
                 <br>
                 <label>Telephone</label><br>
                 <input type="text" name="telephone" value="{{telephone}}"><br>
+                <div class=flex>
+                <button type="submit" class="btn form-btn ">Edit</button>
+                <a href='/delete-user/{{id}}' class="btn btn-danger delete-user">Delete user</a>
+            </div>
             </div>
 
             <div class="col-md-5 col-sm-12">
@@ -20,12 +24,11 @@
             </div>
         </div>
 
-        <button type="submit" class="btn form-btn">Edit</button>
 
         {{#if errorMsg}}
-        <div>
+        <p style="margin-top: 10px;background:  color: white; padding: 3px; font-size: 1.5em;">
             {{errorMsg}}
-        </div>
+        </p>
         {{/if}}
     </form>
 </div>

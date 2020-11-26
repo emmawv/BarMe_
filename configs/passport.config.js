@@ -24,7 +24,7 @@ module.exports = app => {
         })
     })
 
-    app.use(flash())      
+    app.use(flash())
 
     passport.use(new LocalStrategy({ passReqToCallback: true }, (req, username, password, next) => {
         User.findOne({ username }, (err, user) => {
@@ -32,10 +32,10 @@ module.exports = app => {
                 return next(err);
             }
             if (!user) {
-                return next(null, false, { message: "Uusario no registrado" })
+                return next(null, false, { message: "User not registered" })
             }
             if (!bcrypt.compareSync(password, user.password)) {
-                return next(null, false, { message: "Contraseña incorrecta" })
+                return next(null, false, { message: "Incorrect Password" })
             }
             return next(null, user);
         })
