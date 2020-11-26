@@ -1,8 +1,8 @@
 <div class="container">
     <h1 class="center beige titlesign">Edit your info</h1>
     <form action="/edit-user" method='POST' class="edit-profile form" enctype="multipart/form-data">
-        {{!-- <div class="row flex-wrap-reverse"> --}}
-            {{!-- <div class="col-md-7 col-sm-12"> --}}
+        <div class="row flex-wrap-reverse">
+            <div class="col-md-7 col-sm-12">
                 <label>Username</label><br>
                 <input type="text" name="username" value={{username}}>
                 <br>
@@ -10,17 +10,17 @@
                 <input type="email" name="email" value={{email}}>
                 <br>
                 <label>Telephone</label><br>
-                <input type="tel" name="telephone" value={{telephone}}><br>
-            {{!-- </div> --}}
+                <input type="text" name="telephone" value="{{telephone}}"><br>
+            </div>
 
-            {{!-- <div class="col-md-5 col-sm-12"> --}}
+            <div class="col-md-5 col-sm-12">
                 <label>Image</label><br>
-                <img src="{{profileImg}}" alt="Bar photo" style="width: 100px">
+                <img src="{{profileImg}}" alt="Bar photo" class="edit-profimg">
                 <input type="file" class="form-control-file" name="profileImg" value="{{profileImg}}">
-            {{!-- </div> --}}
-        {{!-- </div> --}}
+            </div>
+        </div>
 
-        <button type="submit" class="btn form-btn">EDIT</button>
+        <button type="submit" class="btn form-btn">Edit</button>
 
         {{#if errorMsg}}
         <div>

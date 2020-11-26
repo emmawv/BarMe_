@@ -21,7 +21,7 @@ const userSchema = new Schema({
         default: "https://res.cloudinary.com/djqsmqs26/image/upload/v1606298769/Project-2/pngwing.com_rl5rhk.png"
     },
     favBars: [String],
-    telephone: Number
+    telephone: String
 }, { timestamps: true })
 
 module.exports = mongoose.model('User', userSchema)

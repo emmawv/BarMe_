@@ -15,24 +15,35 @@ body {
 
 .formtitle{
   padding-top:100px;
+  padding-bottom: 50px;
   text-align:center
 }
 
 .filter {
-  height: 100vh;
+  height: 110vh;
   background-color: rgba(89, 49, 40, 0.5);
   z-index: 10
 }
 
 .flex{
-  display:flex;
+  display: flex;
   align-items: center;
+  text-align: left
 }
+
+.icon{
+  width: 50px
+}
+
+.container{
+  padding: 70px 0;
+}
+
 
 //Backgounds
 
 .backg{
-  height: 100vh;
+  height: 110vh;
   background-repeat: no-repeat;
   background-position:center;
   background-size:cover;
@@ -59,14 +70,13 @@ body {
   text-align: center;
 }
 
+
 //Main Page 
 
 .main> div{
-
   z-index: 20;
   padding-top: 15rem;
    color: white;
-
 }
 
 .main a{
@@ -74,51 +84,93 @@ body {
 }
 
 .navbar{
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
+  width: 100%
 }
+
 
 //Bars View
-
-#barsMap{
-  height: 95vh;
-  z-index: 1;
-}
-
-.position-fixed{
-  left:59%;
-  top:5%
-}
-
-.wrapper{
-  padding:40px;
-}
-
-#barMap{
-  height: 90vh;
-  z-index: -10;
-  margin-top:40px
-
-}
 
 .image-square{
   text-align: center;
   display: flex;
   justify-content: center;
   margin-bottom:20px;
-  border: 1px solid white;
   border-radius: 5px;
+  transition: transform .5s;
+
+  &:hover{
+    transform: scale(1.1);
+  }
+  a:hover{
+    text-decoration: none;
+  }
+}
+
+.bar-list img{
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.bar-list p{
+  background-color: rgba(89, 49, 40, 1);
+  color:white;
+  text-align:center;
+  width: 150px;
+  border-radius: 0px 0px 10px 10px;
+  padding: 5px
+}
+
+#barsMap{
+  height: 95vh;
+  z-index: 1;
+  margin: 0;
+  padding: 0
+}
+
+.position-fixed{
+  left:58.5%;
+  top:8%
+}
+
+.wrapper{
+  margin:80px 40px;
+}
+
+
+//Bar detail view
+
+#barMap{
+  height: 385px;
+  z-index: 5;
+  border-radius: 5px;
+  margin-bottom: 15px
 }
 
 .bar-detail{
-  margin-top: 40px
+  margin-top: 20px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.heading{
+  margin-top: 20px;
+  text-align: center
 }
 
 .details-img {
   width: 90%;
+  border-radius: 10px;
+  margin-bottom: 15px
+}
 
+.comments-section{
+  margin-bottom: 30px
 }
 
 .profileImg{
@@ -126,8 +178,7 @@ body {
   height: 30px;
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 5px;
-  margin: 5px
+  margin: 5px 15px 5px 5px;
 }
 
 .comment{
@@ -136,8 +187,8 @@ body {
 }
 
 .comment-form{
-width: 80%;
-margin:15px 0px 5px 
+  width: 80%;
+  margin:15px 0px 5px 
 }
 
 .form-btn{
@@ -151,31 +202,14 @@ margin:15px 0px 5px
   margin-left: 0;
 }
 
-.bar-list img{
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-  
-}
-
-.bar-list p{
-  background-color: rgba(89, 49, 40, 1);
-  color:white;
-  text-align:center;
-  width: 150px;
-  border-radius: 0px 0px 10px 10px;
-  padding: 5px
-}
-
 .bar-detail h5{
   padding-top: 20px
 }
 
-.bar-detail{
-  object-fit: cover;
-  width: 90%;
+.icon-social{
+  width: 60px
 }
+
 
 //User Views
 
@@ -183,33 +217,28 @@ margin:15px 0px 5px
   text-align: center;
 }
 
-
-.signup{
-  padding-top:80px
-
-}
-
 .form input {
   display:inline-block;
   width: 100%;
   padding:10px;
-  margin-bottom:20px
+  margin-bottom:20px;
+  border-style: none;
+  border: 1px solid grey;
+  border-radius: 5px
 }
 
 .form button{
-    width: 100%;
-    color:#0d2426;
-    background-color:#d8ccbc;
-    padding:10px;
-    margin: 10px 0
-    
+  width: 100%;
+  color:#0d2426;
+  background-color:#d8ccbc;
+  padding:10px;
+  margin: 10px 0   
 }
 
 .signup a{
   color:white;
   font-size:1.3em
 }
-
 
 .back{
   float: right
@@ -219,13 +248,53 @@ margin:15px 0px 5px
   display:none
 }
 
-//Media
+.edit-profimg{
+  width: 300px;
+  height: 500px;
+  object-fit: cover;
+}
+
+
+//Media queries
+
+@media (max-width: 1200px){
+  #barMap{
+    height: 320px
+  }
+}
+
+
 @media (max-width: 992px) {
   #barsMap{
-  display:none}
+    display:none
+  }
 
   .bar-detail{
     text-align: center;
+    align-items: center;
+    margin: 0 auto
+  }
+
+  .hrcom{
+    margin: 10px auto;
+  }
+
+  .comments-section{
+    hr, .flex{
+      margin:0 auto;
+    }
+
+    .profileImg{
+      margin: 10px 15px 10px 10px;
+    }
+
+    .comment-form{
+      margin: 15px auto 5px;
+    }
+
+    .form-btn, .flex{
+      width: 80%
+    }
   }
 }
 

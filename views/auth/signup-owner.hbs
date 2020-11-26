@@ -5,17 +5,17 @@
                 <div class="col-sm-12 col-md-8 col-lg-6">
 
                     <form action="/signup/owner" method='POST'>
-                        <h1 class="center formtitle beige">Sign Up</h1>
+                        <h1 class="center formtitle beige">Sign Up<br><small>as Bar Owner</small></h1>
 
                         {{>login}}
 
                         <h5>Email</h5>
-                        <input type="text" placeholder="email" name="email">
+                        <input type="text" name="email">
 
                         <h5>Telephone number</h5>
-                        <input type="text" name="telephone">
+                        <input type="text" name="telephone" placeholder="Remember to start with your prefix">
                         <br>
-                        <button type="submit" class="btn">Log In</button>
+                        <button type="submit" class="btn">Sign Up</button>
 
                         {{#if errorMsg}}
                         <div>
