@@ -1,11 +1,12 @@
 <div class="container details">
     <a href="/bars"><img
-    src="https://res.cloudinary.com/djqsmqs26/image/upload/v1606465589/Project-2/left-arrow_alwix3.svg"
-    alt="back arrow" class="icon"/>Back to bars</a>
+            src="https://res.cloudinary.com/djqsmqs26/image/upload/v1606465589/Project-2/left-arrow_alwix3.svg"
+            alt="back arrow" class="icon" />Back to bars</a>
 
     <div class="heading">
         <h2>{{bar.name}}</h2>
         {{#if isLogin}}
+        {{#if isGuest}}
         {{#unless isFav}}
         <button class="btn form- btn-danger none" id="nofavButton">Remove from favourites</button>
         <button class="btn form-btn" id="favButton">Add to favourites</button>
@@ -13,6 +14,7 @@
         {{#if isFav}}
         <button class="btn form- btn-danger " id="nofavButton">Remove from favourites</button>
         <button class="btn form-btn none" id="favButton">Add to favourites</button>
+        {{/if}}
         {{/if}}
         {{/if}}
         <hr>
@@ -60,7 +62,7 @@
                 <hr>
                 <a target="_blank" href="https://api.whatsapp.com/send?phone=34{{bar.owner.telephone}}"><img
                         src="https://res.cloudinary.com/djqsmqs26/image/upload/v1606388472/Project-2/wpp-logo_fsrlvb.png"
-                        alt="whatsapp logo"/></a>
+                        alt="whatsapp logo" /></a>
                 <a href="#"><img
                         src="https://res.cloudinary.com/djqsmqs26/image/upload/v1606393505/Project-2/contacto-mail-icono_yqc0gj.png"
                         alt="mail logo" id="mail-btn" /></a>

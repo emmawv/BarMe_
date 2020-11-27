@@ -61,7 +61,7 @@ router.get('/:id', (req, res, next) => {
         .then(bar => {
             if (req.user != undefined) {
                 req.user.favBars.forEach(elm => elm.barid == barId ? fav.push(elm) : null)
-                res.render('bars/bar-details', { bar, myKey, isLogin: req.user != undefined, isFav: fav.length })
+                res.render('bars/bar-details', { bar, myKey, isLogin: req.user != undefined, isFav: fav.length, isGuest: req.user.role == 'GUEST' })
             }
             if (req.user == undefined) {
                 res.render('bars/bar-details', { bar, myKey})
