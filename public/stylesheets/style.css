@@ -125,7 +125,9 @@ body {
 .details-img {
   width: 90%;
   border-radius: 10px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  height: 385px;
+  object-fit: cover; }
 
 .comments-section {
   margin-bottom: 30px; }
@@ -217,7 +219,10 @@ body {
 
 @media (max-width: 1200px) {
   #barMap {
-    height: 320px; } }
+    height: 320px; }
+  .details-img {
+    height: 320px;
+    object-fit: cover; } }
 
 @media (max-width: 992px) {
   #barsMap {
