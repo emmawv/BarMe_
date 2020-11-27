@@ -37,5 +37,5 @@ function drawMarkers(bars) {
         })
     })
 
-    mapInstance.setCenter({ lat: bars[0].location.coordinates[0], lng: bars[0].location.coordinates[1] })
+    mapInstance.setCenter({ lat: bars[7].location.coordinates[0], lng: bars[7].location.coordinates[1] })
 }

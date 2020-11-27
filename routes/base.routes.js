@@ -37,8 +37,8 @@ router.get('/profile', ensureAuthenticated, (req, res, next) => {
             .find({ owner: req.user.id })
             .then(bars => res.render('profile/owner', { user: req.user, bars: bars }))
             .catch(err => next(err))
-    }
-    else if (req.user.role === 'ADMIN') {
+                
+    } else if (req.user.role === 'ADMIN') {
         User.find()
             .then(users => res.render('profile/admin', { users }))
             .catch(err => next(err))
@@ -109,9 +109,9 @@ router.post('/edit-bar', uploadCloud.single("image"), (req, res, next) => {
     const { name, description, latitude, longitude } = req.body
     const location = {
         type: 'Point',
-        coodinates: [latitude, longitude]
+        coordinates: [latitude, longitude]
     }
-
+    
     if (req.file !== undefined) {
 
         const image = req.file.path
@@ -225,15 +225,14 @@ router.post('/profile/remove-favourites', (req, res, next) => {
 //Removes Users
 
 router.get('/delete-user/:id', (req, res, next) => {
+
     const userid = req.params.id
+
     Bar
         .deleteMany({ owner: userid })
         .then(() => User.findByIdAndDelete(userid))
         .then(()=> res.redirect('/profile'))
-        
-        .catch(err=>next())
-        
-        
+        .catch(err=>next())   
 })
 
 

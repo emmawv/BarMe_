@@ -11,21 +11,20 @@
                 <br>
                 <label>Telephone</label><br>
                 <input type="text" name="telephone" value="{{telephone}}"><br>
-                <div class="flex">
-                <button type="submit" class="btn beige-btn">Edit</button>
-                <a href='/delete-user/{{id}}' class="btn btn-danger delete-user">Delete user</a>
-            </div>
             </div>
 
             <div class="col-lg-4 col-md-5 col-sm-10 center">
                 <label>Image</label><br>
                 <img src="{{profileImg}}" alt="Bar photo" class="edit-profimg">
                 <input type="file" class="form-control-file" name="profileImg" value="{{profileImg}}">
-
-                <a href='/profile' class="btn back">Back to profile</a>
             </div>
         </div>
+        <div class="prof-buttons">
+            <button type="submit" class="btn prof-btn">Edit</button>
+            <a href='/delete-user/{{id}}' class="btn btn-danger">Delete user</a>
 
+            <a href='/profile' class="btn back">Back to profile</a>
+        </div>
 
         {{#if errorMsg}}
         <p style="margin-top: 10px;background:  color: white; padding: 3px; font-size: 1.5em;">

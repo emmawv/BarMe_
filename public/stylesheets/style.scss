@@ -32,7 +32,9 @@ body {
 }
 
 .icon{
-  width: 50px
+  width: 25px;
+  filter: invert(13%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  padding-right: 5px;
 }
 
 .container{
@@ -176,6 +178,11 @@ body {
   object-fit: cover;
 }
 
+.details>a{
+  color: black;
+  text-decoration: none;
+}
+
 .comments-section{
   margin-bottom: 30px
 }
@@ -234,6 +241,10 @@ body {
 
 //User Views
 
+.welcome, .your{
+  padding: 10px
+}
+
 .user-profile{
   text-align: center;
 }
@@ -248,12 +259,24 @@ body {
   border-radius: 5px
 }
 
-.form button{
+.form button:not(.prof-btn){
   width: 100%;
   color:#0d2426;
   background-color:#d8ccbc;
   padding: 10px;
   margin: 10px 0   
+}
+
+.prof-buttons{
+  width: 90%;
+  margin: 0 auto
+}
+
+.prof-btn{
+  width: 100px;
+  padding: 6px;
+  color:#0d2426;
+  background-color:#d8ccbc;
 }
 
 .signup a{
@@ -337,6 +360,7 @@ body {
       width: 80%
     }
   }
+
 }
 
 
