@@ -14,7 +14,7 @@ body {
   text-align: center; }
 
 .filter {
-  height: 110vh;
+  height: 120vh;
   background-color: rgba(89, 49, 40, 0.5);
   z-index: 10; }
 
@@ -27,10 +27,14 @@ body {
   width: 50px; }
 
 .container {
-  padding: 70px 0; }
+  padding-top: 70px;
+  padding-bottom: 70px; }
+
+.navbar {
+  background-color: #593128; }
 
 .backg {
-  height: 110vh;
+  height: 120vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -156,6 +160,15 @@ body {
 .icon-social {
   width: 60px; }
 
+.edit-img {
+  width: 200px;
+  padding-bottom: 20px; }
+
+.beige-btn {
+  background-color: #d8ccbc;
+  border-color: #d8ccbc;
+  color: black; }
+
 .user-profile {
   text-align: center; }
 
@@ -180,15 +193,22 @@ body {
   font-size: 1.3em; }
 
 .back {
-  float: right; }
+  float: right;
+  border-color: #593128;
+  color: #593128;
+  transition: all 0.2s; }
+  .back:hover {
+    background-color: #593128;
+    color: white; }
 
 .none {
   display: none; }
 
 .edit-profimg {
-  width: 200px;
-  height: 200px;
-  object-fit: cover; }
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  margin: 10px auto; }
 
 .delete-user {
   width: 100%;

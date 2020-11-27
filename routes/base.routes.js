@@ -105,7 +105,7 @@ router.get('/edit-bar', ensureAuthenticated, checkRole('BOSS'), (req, res, next)
 router.post('/edit-bar', uploadCloud.single("image"), (req, res, next) => {
 
     const barId = req.query.id
-    const image = re.file.path
+
     const { name, description, latitude, longitude } = req.body
     const location = {
         type: 'Point',
@@ -120,6 +120,7 @@ router.post('/edit-bar', uploadCloud.single("image"), (req, res, next) => {
             .findByIdAndUpdate(barId, { name, description, image, location })
             .then(() => res.redirect('/profile'))
             .catch(err => next(err))
+        
     } else {
 
         Bar

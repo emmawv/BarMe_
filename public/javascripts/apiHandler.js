@@ -2,7 +2,7 @@ class APIHandler {
 
     constructor() {
         this.axiosServer = axios.create({
-            baseURL: 'https://bar-me.herokuapp.com/'
+            baseURL: 'http://bar-me.herokuapp.com/'
         })
     }
 

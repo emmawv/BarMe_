@@ -20,7 +20,7 @@ body {
 }
 
 .filter {
-  height: 110vh;
+  height: 120vh;
   background-color: rgba(89, 49, 40, 0.5);
   z-index: 10
 }
@@ -36,14 +36,19 @@ body {
 }
 
 .container{
-  padding: 70px 0;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.navbar{
+  background-color: #593128
 }
 
 
 //Backgounds
 
 .backg{
-  height: 110vh;
+  height: 120vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -76,7 +81,7 @@ body {
 .main> div{
   z-index: 20;
   padding-top: 15rem;
-   color: white;
+  color: white;
 }
 
 .main a{
@@ -211,6 +216,20 @@ body {
 }
 
 
+//Edit bar view
+
+.edit-img{
+  width: 200px;
+  padding-bottom: 20px
+}
+
+.beige-btn{
+  background-color: #d8ccbc;
+  border-color: #d8ccbc;
+  color: black
+}
+
+
 //User Views
 
 .user-profile{
@@ -241,7 +260,15 @@ body {
 }
 
 .back{
-  float: right
+  float: right;
+  border-color: #593128;
+  color: #593128;
+  transition: all 0.2s;
+
+  &:hover{
+    background-color: #593128;
+    color: white
+  }
 }
 
 .none{
@@ -249,10 +276,12 @@ body {
 }
 
 .edit-profimg{
-  width: 200px;
-  height: 200px;
+  width: 170px;
+  height: 170px;
   object-fit: cover;
+  margin: 10px auto
 }
+
 .delete-user{
   width: 100%;
   padding: 10px;
