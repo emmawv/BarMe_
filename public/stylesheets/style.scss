@@ -37,6 +37,10 @@ body {
   padding-right: 5px;
 }
 
+.icon-admin{
+  width: 25px;
+}
+
 .container{
   padding-top: 70px;
   padding-bottom: 70px;
@@ -267,11 +271,6 @@ body {
   margin: 10px 0   
 }
 
-.prof-buttons{
-  width: 90%;
-  margin: 0 auto
-}
-
 .prof-btn{
   width: 100px;
   padding: 6px;
@@ -311,6 +310,34 @@ body {
   width: 100%;
   padding: 10px;
   margin-left: 5px
+}
+
+
+//Typewriter effect
+
+.typewriter{
+  display: inline-block
+}
+
+.typewriter h1 {
+  overflow: hidden;
+  border-right: .15em solid white;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: 
+    typing 5s steps(40, end),
+    blink-caret .5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
 }
 
 

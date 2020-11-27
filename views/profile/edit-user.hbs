@@ -19,11 +19,13 @@
                 <input type="file" class="form-control-file" name="profileImg" value="{{profileImg}}">
             </div>
         </div>
-        <div class="prof-buttons">
-            <button type="submit" class="btn prof-btn">Edit</button>
-            <a href='/delete-user/{{id}}' class="btn btn-danger">Delete user</a>
+        <div class="row justify-content-center">
+            <div class="prof-buttons col-lg-9 col-md-12 col-sm-10">
+                <button type="submit" class="btn prof-btn">Edit</button>
+                <a href='/delete-user/{{id}}' class="btn btn-danger">Delete user</a>
 
-            <a href='/profile' class="btn back">Back to profile</a>
+                <a href='/profile' class="btn back">Back to profile</a>
+            </div>
         </div>
 
         {{#if errorMsg}}
