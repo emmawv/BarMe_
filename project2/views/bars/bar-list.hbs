@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-lg-7 col-md-12">
+        <div class="bar-list wrapper">
+            <h3>Bars</h3>
+            <hr>
+            <div class="row">
+                {{#each bars}}
+                <div class="col-lg-4 col-md-3  col-sm-4 col-6  image-square">
+                    <a href='bars/{{id}}'>
+                        <img src="{{image}}" alt="Bar photo">
+                        <p>{{name}}</p>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div id="barsMap" class="col-lg-5 col-md-12 position-fixed"></div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/javascripts/bars-map.js"></script>
+<script src="{{{myKey}}}"></script>

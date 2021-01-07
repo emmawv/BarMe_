@@ -1,0 +1,18 @@
+<div class="container">
+    {{#with user}}
+        <div class="center">
+        <h2 class ="welcome">Welcome {{username}}</h2>
+        <a href="/new-bar" class="btn btn-dark" style="background-color: #593128; border-color: #593128">Create a new bar</a>
+        <hr>
+        </div>
+    {{/with}}
+    <h3 class="center your">Your bars</h3>
+    <div class="row">
+        {{#each bars}}
+            <div class="col-lg-4 col-md-3  col-sm-4 col-6 image-square bar-list">
+            <a href='edit-bar?id={{id}}'><img src="{{image}}" alt=""><p>{{name}}</p></a>
+            </div>
+        {{/each}}
+    </div>
+    
+</div>
