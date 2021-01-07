@@ -242,7 +242,7 @@ body {
 .typewriter h1 {
   overflow: hidden;
   border-right: .15em solid white;
-  white-space: nowrap;
+  white-space: wrap;
   margin: 0 auto;
   letter-spacing: .15em;
   animation: typing 5s steps(40, end), blink-caret 0.5s step-end infinite; }
