@@ -317,12 +317,13 @@ body {
 
 .typewriter{
   display: inline-block;
+  white-space: pre-wrap;
 }
 
 .typewriter h1 {
   overflow: hidden;
   border-right: .15em solid white;
-  white-space: wrap;
+  white-space: nowrap;
   margin: 0 auto;
   letter-spacing: .15em;
   animation: 
