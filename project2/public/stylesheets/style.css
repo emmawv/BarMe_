@@ -236,7 +236,9 @@ body {
   margin-left: 5px; }
 
 .typewriter {
-  display: inline-block; }
+  display: inline-block; 
+  width: 90vw
+}
 
 .typewriter h1 {
   overflow: hidden;
