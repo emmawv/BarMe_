@@ -317,7 +317,6 @@ body {
 
 .typewriter{
   display: inline-block;
-  width: 90vw
 }
 
 .typewriter h1 {
@@ -389,6 +388,12 @@ body {
     }
   }
 
+}
+
+@media (max-width: 425px){
+  .typewriter h1{
+    font-size: 1.5em
+  }
 }
 
 
