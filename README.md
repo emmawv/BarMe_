@@ -15,7 +15,7 @@ Both as a guest and as a signed-up and logged-in user you can see a complete lis
 As a guest when accessing the details of a specific bar you will be able to see it's image and information, location on a map and comments from other users. As a loggin-in user you will also have available a section in which to write your own comments, both telephone (via the Whatsapp application) and email (using the Nodemailer module) options to contact the owner of the bar and a button to add it to your personal favourites list.
 
 
-<img src='https://res.cloudinary.com/barme/image/upload/v1610213352/Project-2/Screenshot_2021-01-09_at_18.21.00_fag27f.png' width='520'><img src='https://res.cloudinary.com/barme/image/upload/v1610213372/Project-2/Screenshot_2021-01-09_at_18.25.17_lpfre0.png' width='475'>
+<img src='https://res.cloudinary.com/barme/image/upload/v1610213352/Project-2/Screenshot_2021-01-09_at_18.21.00_fag27f.png' width='525'><img src='https://res.cloudinary.com/barme/image/upload/v1610213372/Project-2/Screenshot_2021-01-09_at_18.25.17_lpfre0.png' width='475'>
 
 
 ### Profile
