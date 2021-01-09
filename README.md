@@ -2,27 +2,34 @@
 ## A social page to help you find all the best bars in your area, comment on them for other users and contact owners.
 
 <img src='https://res.cloudinary.com/barme/image/upload/v1610213351/Project-2/Screenshot_2021-01-09_at_18.15.08_ut5x6p.png'>
-*Main page view
+_Main page view_
+
 
 ### Bar List
 Both as a guest and as a signed-up and logged-in user you can see a complete list of bars registered on the page along with a map(only available on screens over 1024px wide).
 
+
 <img src='https://res.cloudinary.com/barme/image/upload/v1610214220/Project-2/Screenshot_2021-01-09_at_18.19.33_dso9o6.png'>
-*Bar list view
+_Bar list view_
+
 
 ### Bar Details
 As a guest when accessing the details of a specific bar you will be able to see it's image and information, location on a map and comments from other users. As a loggin-in user you will also have available a section in which to write your own comments, both telephone (via the Whatsapp application) and email (using the Nodemailer module) options to contact the owner of the bar and a button to add it to your personal favourites list.
 
+
 <img src='https://res.cloudinary.com/barme/image/upload/v1610213352/Project-2/Screenshot_2021-01-09_at_18.21.00_fag27f.png'>
-*Bar details view as a guest
+_Bar details view as a guest_
+
 
 <img src='https://res.cloudinary.com/barme/image/upload/v1610213372/Project-2/Screenshot_2021-01-09_at_18.25.17_lpfre0.png'>
-*Bar details view as a logged-in user
+_Bar details view as a logged-in user_
+
 
 ### Profile
 When registering two options are available depending on your needs, you can choose between being a regular user or a bar owner. The profile page will be different depending on the role of the user:
 - Regular users will see all bars added to their favourites list and a button that takes them to the complete list of bars.
 - Bar owners will see a list of their bars and a button that allows them to add new ones.
+
 
 ### Login Info
 If you would like to explore the functionalities of the page with different roles here are the login credentials:
