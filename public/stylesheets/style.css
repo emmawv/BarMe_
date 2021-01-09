@@ -283,4 +283,16 @@ body {
   .comments-section .form-btn, .comments-section .flex {
     width: 80%; } }
 
+@media (max-width: 425px) {
+  .typewriter h1 {
+    font-size: 1.5em; }
+  .main a {
+    font-size: 1em; } }
+
+@media (min-width: 425px) and (max-width: 550px) {
+  .typewriter h1 {
+    font-size: 1.8em; }
+  .main a {
+    font-size: 1.3em; } }
+
 /*# sourceMappingURL=style.css.map */
