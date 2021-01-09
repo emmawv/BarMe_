@@ -236,15 +236,12 @@ body {
   margin-left: 5px; }
 
 .typewriter {
-  display: inline-block;
-  white-space: pre-wrap;
-  width: 90vw
-}
+  display: inline-block; }
 
 .typewriter h1 {
   overflow: hidden;
   border-right: .15em solid white;
-  white-space: pre-wrap;
+  white-space: nowrap;
   margin: 0 auto;
   letter-spacing: .15em;
   animation: typing 5s steps(40, end), blink-caret 0.5s step-end infinite; }
@@ -285,5 +282,17 @@ body {
     margin: 15px auto 5px; }
   .comments-section .form-btn, .comments-section .flex {
     width: 80%; } }
+
+@media (max-width: 425px) {
+  .typewriter h1 {
+    font-size: 1.5em; }
+  .main a {
+    font-size: 1em; } }
+
+@media (min-width: 425px) and (max-width: 550px) {
+  .typewriter h1 {
+    font-size: 1.8em; }
+  .main a {
+    font-size: 1.3em; } }
 
 /*# sourceMappingURL=style.css.map */

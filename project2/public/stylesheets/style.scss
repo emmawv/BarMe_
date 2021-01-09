@@ -317,14 +317,12 @@ body {
 
 .typewriter{
   display: inline-block;
-  white-space: pre-wrap;
-  width: 90vw
 }
 
 .typewriter h1 {
   overflow: hidden;
   border-right: .15em solid white;
-  white-space: pre-wrap;
+  white-space: nowrap;
   margin: 0 auto;
   letter-spacing: .15em;
   animation: 
@@ -390,4 +388,24 @@ body {
     }
   }
 
+}
+
+@media (max-width: 425px){
+  .typewriter h1{
+    font-size: 1.5em
+  }
+
+  .main a{
+    font-size: 1em
+  }
+}
+
+@media (min-width: 425px) and (max-width: 550px){
+  .typewriter h1{
+    font-size: 1.8em
+  }
+
+  .main a{
+    font-size: 1.3em
+  }
 }
