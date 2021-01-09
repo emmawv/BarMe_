@@ -2,7 +2,6 @@
 ## A social page to help you find all the best bars in your area, comment on them for other users and contact owners.
 
 <img src='https://res.cloudinary.com/barme/image/upload/v1610213351/Project-2/Screenshot_2021-01-09_at_18.15.08_ut5x6p.png'>
-_Main page view_
 
 
 ### Bar List
@@ -10,7 +9,6 @@ Both as a guest and as a signed-up and logged-in user you can see a complete lis
 
 
 <img src='https://res.cloudinary.com/barme/image/upload/v1610214220/Project-2/Screenshot_2021-01-09_at_18.19.33_dso9o6.png'>
-_Bar list view_
 
 
 ### Bar Details
@@ -18,11 +16,9 @@ As a guest when accessing the details of a specific bar you will be able to see 
 
 
 <img src='https://res.cloudinary.com/barme/image/upload/v1610213352/Project-2/Screenshot_2021-01-09_at_18.21.00_fag27f.png'>
-_Bar details view as a guest_
 
 
 <img src='https://res.cloudinary.com/barme/image/upload/v1610213372/Project-2/Screenshot_2021-01-09_at_18.25.17_lpfre0.png'>
-_Bar details view as a logged-in user_
 
 
 ### Profile
