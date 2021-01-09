@@ -1,14 +1,14 @@
 # BarMe_
 ## A social page to help you find all the best bars in your area, comment on them for other users and contact owners.
 
-<img src='https://res.cloudinary.com/barme/image/upload/v1610213351/Project-2/Screenshot_2021-01-09_at_18.15.08_ut5x6p.png'>
+<img src='https://res.cloudinary.com/barme/image/upload/v1610213351/Project-2/Screenshot_2021-01-09_at_18.15.08_ut5x6p.png' title='Main page view'>
 
 
 ### Bar List
 Both as a guest and as a signed-up and logged-in user you can see a complete list of bars registered on the page along with a map(only available on screens over 1024px wide).
 
 
-<img src='https://res.cloudinary.com/barme/image/upload/v1610214220/Project-2/Screenshot_2021-01-09_at_18.19.33_dso9o6.png' title='Main page view'>
+<img src='https://res.cloudinary.com/barme/image/upload/v1610214220/Project-2/Screenshot_2021-01-09_at_18.19.33_dso9o6.png' title='Bar list view on screen over 1024px'>
 
 
 ### Bar Details
